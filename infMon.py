@@ -2,11 +2,15 @@
 # -*- coding: utf-8 -*-
 # @Author: Jeremiah Marks
 # @Date:   2015-05-15 19:49:25
-# @Last Modified 2015-05-15
-# @Last Modified time: 2015-05-15 21:41:54
+# @Last Modified 2015-05-16
+# @Last Modified time: 2015-05-16 13:07:57
 
 ##InfusionsoftImportMonster
 ##Basically everything in one file
+
+############################################################
+###  Shortcut:  ctrl +k ctrl+1 to fold all
+############################################################
 
 ## Also: note to self, if it is not running:
     ## check the first line, you big dummy
@@ -24,7 +28,7 @@ iditerator = iter(range(1,300))
 appname=pw.passwords['appname']
 apikey = pw.passwords['apikey']
 importFile=pw.passwords['importFile']
-apikey="422fb245118f7618c797f4c2d520d7e1a128d14dd486db8729dd7ed63810f9de"
+
 # write a server function that creates all of the product categories locally
 # then write a create productCategory function that checks if the category already exists
 # with the same family path (lineage?) if it does, return that id, else
@@ -429,6 +433,79 @@ class ISServer:
 
     def addImageToProduct(self, productID, image):
         return self.connection.DataService.update(self.infusionsoftAPIKey, 'Product', {'ShortDescription' : 'Updated with new image'})
+
+def addToCategories(productId, categoryString):
+    global productCatagories
+    # basically the string will be expected to be a filepath
+    # of categories.  IE: 'cat1/cat2/'. Heck that is a neat idea
+    # categoryPathAt = 
+    categoryPath=iter(categoryString.split("/"))
+    objectPath=[] # if the path were a/b/c, this will hold the 
+    stringPath=""
+    # object representation of that path
+    #for eachCatPos in range(len(categoryPath)):
+        # the product categories are stored in a global 
+        # dictionary built like the following:
+        # productCategory={
+        #    "name":[
+            #           TheActualProduct,
+            #           {
+            #           "childName":[
+            #                           childProduct,
+            #                       ]
+            #           }
+        #           ]
+        # Sigh, I was trying hard not to use this iteration
+        # method, but it seems like in range() is going to 
+        # work best to iterate a channel of things like this
+        # 
+        # 
+        # Sample data structure
+        # 
+        # check the zeroth row for zerothproductCatName
+        # check the matchingElements
+        # productCategory["Category1"][0] == the actual object, if it exists
+        # productCategory["Category1"][1] == {
+        #                                         "childName":[childProduct, 
+        #                                             {
+        #                                                 "childName": [
+        #                                                     childProduct
+        #                                                 ]
+        #                                             } 
+        #                                         ], 
+        #                                         "otherName":[otherChildProduct,
+        #                                             {
+        #                                                 "child1":[child1],
+        #                                                 "child2":[child2]
+        #                                             }
+        #                                         ]
+        #                                     }
+        #categoryName = categoryPath[eachCatPos]
+        #stringPath +=categoryName
+        # we are going to make sure we register children with 
+        # their parents when we are building this, so that 
+        # they can all be found from top down at all time. 
+        # step through the global list of objects to find the 
+        # parent of the current.  See if your name is listed as
+        # a child. If it is, return your object. If it is not, 
+        # create a key pointing to you at #0 your way. Your children
+        # will be at #1, by the way.
+        # use list[:-1] to snag the last one. 
+        # path = "" + OtherPathsUsingIterator + "/"
+        # should make the global naming convention easy.
+        # Actual file is stored in global["Potentialpath"]["/"] and
+        # children are stored in global ["path/"]
+        # if categoryName in productCatagories.keys()
+        # productCatagories[stringPath]={'/':categoryPath[eachCatPos],
+        #                             categoryName:{}
+        #
+
+        for partialPath in categoryPath:
+            stringtopath+=potpath
+            rD[stringtopath]=stringtopath
+            stringtopath+='/'
+    return productCatagories
+
 
 def sampleData(productsExport=pw.passwords['importFile']):
     global server
