@@ -1,0 +1,5 @@
+passwords={
+    "appname":"",
+    "apikey":"",
+    "importFile":"",
+}
