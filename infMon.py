@@ -3,7 +3,7 @@
 # @Author: Jeremiah Marks
 # @Date:   2015-05-15 19:49:25
 # @Last Modified 2015-05-16
-# @Last Modified time: 2015-05-16 13:07:57
+# @Last Modified time: 2015-05-16 21:38:22
 
 ##InfusionsoftImportMonster
 ##Basically everything in one file
@@ -22,6 +22,7 @@ import random
 import urllib
 import base64
 import csv
+import productImage
 import my_pw as pw
 
 iditerator = iter(range(1,300))
@@ -37,7 +38,7 @@ tables={}
 tables['ProductOptValue'] = ["Id", "IsDefault", "Label", "Name", "OptionIndex", "PriceAdjustment", "ProductOptionId", "Sku",]
 tables['ProductOption'] = ["AllowSpaces", "CanContain", "CanEndWith", "CanStartWith", "Id", "IsRequired", "Label", "MaxChars", "MinChars", "Name", "OptionType", "Order", "ProductId", "TextMessage"]
 tables['ProductCategory'] = ["CategoryDisplayName", "CategoryImage", "CategoryOrder", "Id", "ParentId"]
-
+tables["ProductCategoryAssign"]=["Id","ProductCategoryId","ProductId"]
 products=[]
 productCatagories={}
 
@@ -51,9 +52,12 @@ productCatagories={}
 # CategoryOrder                                      Integer
 # Id                                                      Id
 # ParentId                                                Id
-
-
-
+#
+# ProductCategoryAssign
+# 
+# Id                =Id  =Read
+# ProductCategoryId =Id  =Edit Add Read
+# ProductId         =Id  =Edit Add Read 
 
 
 class product(object):
@@ -61,7 +65,7 @@ class product(object):
     def __init__(self, name):
         self.id=False
         self.name=name
-        self.categories=False
+        self.categories=None
         self.catStrings=[]
         self.sku=False
         self.description=False
@@ -112,14 +116,27 @@ class product(object):
 
     def getInternalPage(self):
         return "https://" + server.infusionsoftapp + ".infusionsoft.com/app/product/manageProduct?productId=" + str(self.id)
+
 class productCat(object):
+    global productCatagories
     def __init__(self, name):
         self.name=name
         self.children=[]
         self.image=None
         self.order=None
         self.id=None
-        self.parent=None
+        self.parent=0
+
+    def register(self):
+        if self.parent in [None,0]:
+            self.parent = 0
+            self.path=""+self.name
+        else:
+            self.path=productCatagories[self.parent].path+"/"+self.name
+        productCatagories[self.path]=self
+        if self.id is not None:
+            productCatagories[self.id]=self
+
 
     def prepare(self):
         vals={}
@@ -138,6 +155,7 @@ class productCat(object):
             vals['Id'] = self.id
         vals.update(self.prepare)
         return vals
+
 class prodCatAss(object):
 
     def __init__(self, productId, catId):
@@ -156,6 +174,7 @@ class prodCatAss(object):
         if self.id is not None:
             vals['Id'] = self.id
         return vals.update(self.prepare())
+
 class prodOption(object):
 
     def __init__(self, productId):
@@ -431,85 +450,96 @@ class ISServer:
     def updateRecord(self, tableName, recordId, updateValues):
         return self.connection.DataService.update(self.infusionsoftAPIKey, tableName, recordId, updateValues)
 
+    def getMatchingRecords(self, tableName, criteria, desiredFields, orderedBy=None):
+        if orderedBy is None:
+            orderedBy = desiredFields[0]
+        records = []
+        p=0
+        # interestingData=["AllowSpaces", "CanContain", "CanEndWith", "CanStartWith", "Id", "IsRequired", "Label", "MaxChars", "MinChars", "Name", "OptionType", "Order", "ProductId", "TextMessage"]
+        while True:
+            listOfDicts = self.connection.DataService.query(self.infusionsoftAPIKey, tableName, 1000, p, criteria, desiredFields, orderedBy, True)
+            for each in listOfDicts:
+                thisRecord={}
+                for eachbit in desiredFields:
+                    if not each.has_key(eachbit):
+                        each[eachbit]=None
+                    thisRecord[eachbit] = each[eachbit]
+                records.append(thisRecord)
+            if not(len(listOfDicts)==1000):
+                break
+            p+=1
+        return records
+
+
     def addImageToProduct(self, productID, image):
         return self.connection.DataService.update(self.infusionsoftAPIKey, 'Product', {'ShortDescription' : 'Updated with new image'})
-
-def addToCategories(productId, categoryString):
+server=ISServer(appname, apikey)
+def buildCategories(force=False):
     global productCatagories
-    # basically the string will be expected to be a filepath
-    # of categories.  IE: 'cat1/cat2/'. Heck that is a neat idea
-    # categoryPathAt = 
-    categoryPath=iter(categoryString.split("/"))
-    objectPath=[] # if the path were a/b/c, this will hold the 
-    stringPath=""
-    # object representation of that path
-    #for eachCatPos in range(len(categoryPath)):
-        # the product categories are stored in a global 
-        # dictionary built like the following:
-        # productCategory={
-        #    "name":[
-            #           TheActualProduct,
-            #           {
-            #           "childName":[
-            #                           childProduct,
-            #                       ]
-            #           }
-        #           ]
-        # Sigh, I was trying hard not to use this iteration
-        # method, but it seems like in range() is going to 
-        # work best to iterate a channel of things like this
-        # 
-        # 
-        # Sample data structure
-        # 
-        # check the zeroth row for zerothproductCatName
-        # check the matchingElements
-        # productCategory["Category1"][0] == the actual object, if it exists
-        # productCategory["Category1"][1] == {
-        #                                         "childName":[childProduct, 
-        #                                             {
-        #                                                 "childName": [
-        #                                                     childProduct
-        #                                                 ]
-        #                                             } 
-        #                                         ], 
-        #                                         "otherName":[otherChildProduct,
-        #                                             {
-        #                                                 "child1":[child1],
-        #                                                 "child2":[child2]
-        #                                             }
-        #                                         ]
-        #                                     }
-        #categoryName = categoryPath[eachCatPos]
-        #stringPath +=categoryName
-        # we are going to make sure we register children with 
-        # their parents when we are building this, so that 
-        # they can all be found from top down at all time. 
-        # step through the global list of objects to find the 
-        # parent of the current.  See if your name is listed as
-        # a child. If it is, return your object. If it is not, 
-        # create a key pointing to you at #0 your way. Your children
-        # will be at #1, by the way.
-        # use list[:-1] to snag the last one. 
-        # path = "" + OtherPathsUsingIterator + "/"
-        # should make the global naming convention easy.
-        # Actual file is stored in global["Potentialpath"]["/"] and
-        # children are stored in global ["path/"]
-        # if categoryName in productCatagories.keys()
-        # productCatagories[stringPath]={'/':categoryPath[eachCatPos],
-        #                             categoryName:{}
-        #
+    global server
+    global tables
+    if (len(productCatagories)==0 or force):
+        allCategories=server.getAllRecords('ProductCategory', tables['ProductCategory'])
+        catHold=[]
+        for eachCategory in allCategories:
+            thisCat = productCat(eachCategory['CategoryDisplayName'])
+            thisCat.id=eachCategory['Id']
+            if eachCategory["ParentId"] is not None:
+                thisCat.parent=eachCategory["ParentId"]
+            if eachCategory["CategoryImage"] is not None:
+                thisCat.CategoryImage=eachCategory["CategoryImage"]
+            if eachCategory["CategoryImage"] is not None:
+                thisCat.order=eachCategory["CategoryImage"]
+            catHold.append(thisCat)
+        for eachCat in [cat for cat in catHold if cat.parent in[None,0]]:
+            eachCat.register()
+        while True:
+            repeat=False
+            for eachCategory in catHold:
+                try:
+                    eachCategory.register()
+                except KeyError:
+                    # print KeyError.args
+                    # print KeyError.message
+                    repeat=True
+            if not repeat:
+                break
 
-        for partialPath in categoryPath:
-            stringtopath+=potpath
-            rD[stringtopath]=stringtopath
-            stringtopath+='/'
-    return productCatagories
 
+def getCatId(pathToCat):
+    global productCatagories
+    global iditerator
+    global server
+    buildCategories()
+    checkPath = '/'+pathToCat
+    # if (checkPath[0] != '/'):
+    #     checkPath = '/' + pathToCat
+    if pathToCat in productCatagories.keys():
+        return productCatagories[pathToCat].id
+    else:
+        pathData=pathToCat.rsplit('/',1)
+        if len(pathData)==1:
+            thisCat = productCat(pathData[0])
+        else:
+            thisCat = productCat(pathData[1])
+            thisCat.parent=getCatId(pathData[0])
+        thisCat.id=server.createNewRecord('ProductCategory', thisCat.prepare())
+        thisCat.register()
+        return thisCat.id
+
+def getCatAssiggnId(productCatAssRecord):
+    global server
+    global tables
+    matchingRecords=server.getMatchingRecords( "ProductCategoryAssign", productCatAssRecord.prepare(), tables["ProductCategoryAssign"])
+    if len(matchingRecords)>0:
+        return matchingRecords[0]["Id"]
+    else:
+        return server.createNewRecord("ProductCategoryAssign", productCatAssRecord.prepare())
 
 def sampleData(productsExport=pw.passwords['importFile']):
     global server
     global products
+    global productCatagories
     blankProd=product("")
     server = ISServer(appname, apikey)
     thisProduct=None
@@ -567,7 +597,16 @@ def sampleData(productsExport=pw.passwords['importFile']):
                     thisProduct.imageStrings.append(row["Product Images"])
                 if row["Meta Description"]:
                     thisProduct.shortDescription = row["Meta Description"]
+                if row["Product Images"]:
+                    imageStrings=row["Product Images"].split("|")
+                    for eachS in imageStrings:
+                        for eachVal in eachS.split(","):
+                            if "Product Image URL: " in eachVal:
+                                thisProduct.images.append(eachVal.replace("Product Image URL: ","").strip())
+
                 thisProduct.id = server.cnp(thisProduct.prepare())
+                if thisProduct.images:
+                    productImage.addImageToProduct(thisProduct.id, thisProduct.images[0])
                 # thisProduct.id=iditerator.next()
     # we need to save the last product somewhere after it gets created. 
     products.append(thisProduct)
@@ -608,13 +647,14 @@ def sampleData(productsExport=pw.passwords['importFile']):
         # each product option has been created and assigned. 
         # lets take care of the categories.
         for eachString in eachProduct.catStrings:
-            eachString.replace("\\", "")
+            if eachProduct.categories is None:
+                eachProduct.categories={}
+            eachString.replace("\\/", " - ")
             for eachSubstring in eachString.split(";"):
                 #The string should now be something like
                 # ParentCat/ChildCat/grandChildCat
-                pass
-
-
-
-
+                thiscatid=getCatId(eachSubstring)
+                thisAssignment=prodCatAss(eachProduct.id, thiscatid)
+                thisAssignment.id=getCatAssiggnId(thisAssignment)
+                eachProduct.categories[eachSubstring]=eachProduct.categories[int(thiscatid)]=thisAssignment
     return products

@@ -1,5 +1,0 @@
-passwords={
-    "appname":"",
-    "apikey":"",
-    "importFile":"",
-}
