@@ -3,7 +3,7 @@
 # @Author: Jeremiah Marks
 # @Date:   2015-05-15 19:49:25
 # @Last Modified 2015-05-17
-# @Last Modified time: 2015-05-17 00:52:28
+# @Last Modified time: 2015-05-17 01:08:44
 
 ##InfusionsoftImportMonster
 ##Basically everything in one file
@@ -15,7 +15,7 @@
 ## Also: note to self, if it is not running:
     ## check the first line, you big dummy
 sampleTableHeaders=["NameID", "SKU", "GPS Manufacturer Part Number", "GPS Category", "GPS Enabled", "Name", "Product URL", "Brand", "Option Set", "Description", "Price", "Allow Purchases", "Product Availability", "Category String", "Category Details", "Product Files", "Product Images", "Meta Description", "Product Condition"]
-
+import string
 import xmlrpclib
 import time
 import random
@@ -25,6 +25,7 @@ import csv
 import productImage
 import my_pw as pw
 
+stringTranslation=string.maketrans("asdfghjklpoiuytrewq","lpokjiuhygtfrdeswaq")
 iditerator = iter(range(1,300))
 appname=pw.passwords['appname']
 apikey = pw.passwords['apikey']
@@ -546,12 +547,12 @@ def sampleData(productsExport=pw.passwords['importFile']):
     with open(productsExport) as datas:
         reader = csv.DictReader(datas)
         for row in reader:
-            if (len(row)>0 and row["Name"][0]=="["):
+            if (len(row["Name"])>0 and row["Name"][0]=="["):
                 #This indicates that it is not a product
                 if (row["Price"]==""):
                     # If the price value is blank, this means
                     # that it is an option, not a pricing rule
-                    optionString=row["Name"]
+                    optionString=row["Name"].translate(stringTranslation)
                     while(len(optionString)>0):
                         optionString = optionString[4:]
                         # This should remove the original tag
@@ -584,19 +585,19 @@ def sampleData(productsExport=pw.passwords['importFile']):
                     # to this variable ) We do not want to call it before the first
                     # product is created, hence the if to check.
                     products.append(thisProduct)
-                thisProduct = product(row["Name"])
+                thisProduct = product(row["Name"].translate(stringTranslation))
                 for column in ["GPS Category", "Brand", "Category String"]:
-                    thisProduct.catStrings.append(row[column])
+                    thisProduct.catStrings.append(row[column].translate(stringTranslation))
                 if row["SKU"]:
-                    thisProduct.sku = row["SKU"]
+                    thisProduct.sku = row["SKU"].translate(stringTranslation)
                 if row['Description']:
-                    thisProduct.description=row['Description']
+                    thisProduct.description=row['Description'].translate(stringTranslation)
                 if row["Price"]:
                     thisProduct.price = row["Price"]
                 if row["Product Images"]:
                     thisProduct.imageStrings.append(row["Product Images"])
                 if row["Meta Description"]:
-                    thisProduct.shortDescription = row["Meta Description"]
+                    thisProduct.shortDescription = row["Meta Description"].translate(stringTranslation)
                 if row["Product Images"]:
                     imageStrings=row["Product Images"].split("|")
                     for eachS in imageStrings:
@@ -608,10 +609,10 @@ def sampleData(productsExport=pw.passwords['importFile']):
                 values=thisProduct.prepare()
                 print "Product Created: " + str(thisProduct.id) 
                 for x in values:
-                    print(x + ":"+ str(values[x])
+                    print(x + ":"+ str(values[x]))
                 print "Product Created: " + str(thisProduct.id) 
-                print getPublicPage()
-                print getInternalPage()
+                print thisProduct.getPublicPage()
+                print thisProduct.getInternalPage()
                 # if thisProduct.images:
                 #     productImage.addImageToProduct(thisProduct.id, thisProduct.images[0])
                 # thisProduct.id=iditerator.next()
