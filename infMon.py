@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Jeremiah Marks
 # @Date:   2015-05-15 19:49:25
-# @Last Modified 2015-05-16
-# @Last Modified time: 2015-05-16 21:38:22
+# @Last Modified 2015-05-17
+# @Last Modified time: 2015-05-17 00:52:28
 
 ##InfusionsoftImportMonster
 ##Basically everything in one file
@@ -14,7 +14,7 @@
 
 ## Also: note to self, if it is not running:
     ## check the first line, you big dummy
-
+sampleTableHeaders=["NameID", "SKU", "GPS Manufacturer Part Number", "GPS Category", "GPS Enabled", "Name", "Product URL", "Brand", "Option Set", "Description", "Price", "Allow Purchases", "Product Availability", "Category String", "Category Details", "Product Files", "Product Images", "Meta Description", "Product Condition"]
 
 import xmlrpclib
 import time
@@ -546,7 +546,7 @@ def sampleData(productsExport=pw.passwords['importFile']):
     with open(productsExport) as datas:
         reader = csv.DictReader(datas)
         for row in reader:
-            if (row["Name"][0]=="["):
+            if (len(row)>0 and row["Name"][0]=="["):
                 #This indicates that it is not a product
                 if (row["Price"]==""):
                     # If the price value is blank, this means
@@ -565,7 +565,7 @@ def sampleData(productsExport=pw.passwords['importFile']):
                         except ValueError:
                             optionsValue = optionString
                             optionString = ""
-                        thisProduct.optionsSettings[optionName].add(optionsValue)
+                        thisProduct.optionsSettings[optionName.replace('-_-',",")].add(optionsValue.replace('-_-',","))
                 else:
                     # This is a pricing rule
                     priceChange = row["Price"][5:]
@@ -605,8 +605,15 @@ def sampleData(productsExport=pw.passwords['importFile']):
                                 thisProduct.images.append(eachVal.replace("Product Image URL: ","").strip())
 
                 thisProduct.id = server.cnp(thisProduct.prepare())
-                if thisProduct.images:
-                    productImage.addImageToProduct(thisProduct.id, thisProduct.images[0])
+                values=thisProduct.prepare()
+                print "Product Created: " + str(thisProduct.id) 
+                for x in values:
+                    print(x + ":"+ str(values[x])
+                print "Product Created: " + str(thisProduct.id) 
+                print getPublicPage()
+                print getInternalPage()
+                # if thisProduct.images:
+                #     productImage.addImageToProduct(thisProduct.id, thisProduct.images[0])
                 # thisProduct.id=iditerator.next()
     # we need to save the last product somewhere after it gets created. 
     products.append(thisProduct)
@@ -657,4 +664,8 @@ def sampleData(productsExport=pw.passwords['importFile']):
                 thisAssignment=prodCatAss(eachProduct.id, thiscatid)
                 thisAssignment.id=getCatAssiggnId(thisAssignment)
                 eachProduct.categories[eachSubstring]=eachProduct.categories[int(thiscatid)]=thisAssignment
+        for lastEachProduct in products:
+            if lastEachProduct.images:
+                print "uploading image from " + lastEachProduct.images[0]
+                productImage.addImageToProduct(lastEachProduct.id, lastEachProduct.images[0])
     return products

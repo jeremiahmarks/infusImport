@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Jeremiah Marks
 # @Date:   2015-05-16 18:47:35
-# @Last Modified 2015-05-16
-# @Last Modified time: 2015-05-16 21:34:56
+# @Last Modified 2015-05-17
+# @Last Modified time: 2015-05-17 00:04:05
 
 from my_pw import passwords
 
@@ -32,6 +32,10 @@ def login():
 
 def downloadImage(imageurl):
     file_name = imageurl.split('/')[-1]
+    if (len(file_name)<4 or not ( file_name[-4]=="." )):
+        # if not(file_name[-4]=="."):
+        # assume jpg
+        file_name = file_name+".jpg"
     urllib.urlretrieve(imageurl, file_name)
     return file_name
 
@@ -43,7 +47,7 @@ def addImageToProduct(productID, imageurl):
     file_name = downloadImage(imageurl)
     folderPath = os.getcwd()
     filePath=folderPath+"/"+file_name
-    driver.get("https://" + passwords['appname'] + ".infusionsoft.com/app/product/manageProduct?productId="+str(productID))
+    driver.get("https://" + passwords['appname'] + ".infusionsoft.com/app/product/manageProduct?productId="+str(productID)+"&tab=productImages")
     elem=driver.find_element_by_link_text("Product Image")
     elem.click()
     driver.execute_script("document.getElementsByClassName('inf-fileupload-text')[0].setAttribute('readonly', 'false')")
