@@ -1,1038 +1,868 @@
- 
 
 ActionSequence
-
-Id                           Id       Read
-TemplateName                 String   Read
-VisibleToTheseUsers          String   Read
-
-
+    Id                           Id       Read
+    TemplateName                 String   Read
+    VisibleToTheseUsers          String   Read
 AffResource
-
-Id                           Id       Edit Delete Add Read
-Notes                        String   Edit Delete Add Read
-ProgramIds                   String   Edit Delete Add Read
-ResourceHREF                 String   Edit Delete Add Read
-ResourceHTML                 String   Edit Delete Add Read
-ResourceOrder                String   Edit Delete Add Read
-ResourceType                 String   Edit Delete Add Read
-Title                        String   Edit Delete Add Read
-
-
+    Id                           Id       Edit Delete Add Read
+    Notes                        String   Edit Delete Add Read
+    ProgramIds                   String   Edit Delete Add Read
+    ResourceHREF                 String   Edit Delete Add Read
+    ResourceHTML                 String   Edit Delete Add Read
+    ResourceOrder                String   Edit Delete Add Read
+    ResourceType                 String   Edit Delete Add Read
+    Title                        String   Edit Delete Add Read
 Affiliate
-
-AffCode                      String   Edit Delete Add Read
-AffName                      String   Edit Delete Add Read
-ContactId                    Id       Edit Delete Add Read
-DefCommissionType            Integer  Edit Delete Add Read
-Id                           Id       Read
-LeadAmt                      Double   Edit Delete Add Read
-LeadCookieFor                Integer  Edit Delete Add Read
-LeadPercent                  Double   Edit Delete Add Read
-NotifyLead                   Integer  Edit Delete Add Read
-NotifySale                   Integer  Edit Delete Add Read
-ParentId                     Id       Edit Delete Add Read
-Password                     String   Edit Delete Add Read
-PayoutType                   Integer  Edit Delete Add Read
-SaleAmt                      Double   Edit Delete Add Read
-SalePercent                  Double   Edit Delete Add Read
-Status                       Integer  Edit Delete Add Read
-
-
+    AffCode                      String   Edit Delete Add Read
+    AffName                      String   Edit Delete Add Read
+    ContactId                    Id       Edit Delete Add Read
+    DefCommissionType            Integer  Edit Delete Add Read
+    Id                           Id       Read
+    LeadAmt                      Double   Edit Delete Add Read
+    LeadCookieFor                Integer  Edit Delete Add Read
+    LeadPercent                  Double   Edit Delete Add Read
+    NotifyLead                   Integer  Edit Delete Add Read
+    NotifySale                   Integer  Edit Delete Add Read
+    ParentId                     Id       Edit Delete Add Read
+    Password                     String   Edit Delete Add Read
+    PayoutType                   Integer  Edit Delete Add Read
+    SaleAmt                      Double   Edit Delete Add Read
+    SalePercent                  Double   Edit Delete Add Read
+    Status                       Integer  Edit Delete Add Read
 CCharge
-
-Amt                          Double   Read
-ApprCode                     String   Read
-CCId                         Id       Read
-Id                           Id       Read
-MerchantId                   Id       Read
-OrderNum                     String   Read
-PaymentId                    Id       Read
-RefNum                       String   Read
-
-
+    Amt                          Double   Read
+    ApprCode                     String   Read
+    CCId                         Id       Read
+    Id                           Id       Read
+    MerchantId                   Id       Read
+    OrderNum                     String   Read
+    PaymentId                    Id       Read
+    RefNum                       String   Read
 CProgram
-
-Active                       Boolean  Edit Add Read
-BillingType                  String   Edit Add Read
-DefaultCycle                 String   Edit Add Read
-DefaultFrequency             Integer  Edit Add Read
-DefaultPrice                 Double   Edit Add Read
-Description                  String   Edit Add Read
-Family                       String   Edit Add Read
-HideInStore                  Integer  Edit Add Read
-Id                           Id       Read
-LargeImage                   Blob     Edit Add Read
-ProductId                    Id       Edit Add Read
-ProgramName                  String   Edit Add Read
-ShortDescription             String   Edit Add Read
-Sku                          String   Edit Add Read
-Status                       Integer  Edit Add Read
-Taxable                      Integer  Edit Add Read
-
-
+    Active                       Boolean  Edit Add Read
+    BillingType                  String   Edit Add Read
+    DefaultCycle                 String   Edit Add Read
+    DefaultFrequency             Integer  Edit Add Read
+    DefaultPrice                 Double   Edit Add Read
+    Description                  String   Edit Add Read
+    Family                       String   Edit Add Read
+    HideInStore                  Integer  Edit Add Read
+    Id                           Id       Read
+    LargeImage                   Blob     Edit Add Read
+    ProductId                    Id       Edit Add Read
+    ProgramName                  String   Edit Add Read
+    ShortDescription             String   Edit Add Read
+    Sku                          String   Edit Add Read
+    Status                       Integer  Edit Add Read
+    Taxable                      Integer  Edit Add Read
 Campaign
-
-Id                           Id       Read
-Name                         String   Read
-Status                       String   Read
-
-
+    Id                           Id       Read
+    Name                         String   Read
+    Status                       String   Read
 CampaignStep
-
-CampaignId                   Id       Read
-Id                           Id       Read
-StepStatus                   String   Read
-StepTitle                    String   Read
-TemplateId                   Id       Read
-
-
+    CampaignId                   Id       Read
+    Id                           Id       Read
+    StepStatus                   String   Read
+    StepTitle                    String   Read
+    TemplateId                   Id       Read
 Campaignee
-
-Campaign                     String   Read
-CampaignId                   Id       Read
-ContactId                    Id       Read
-Status                       Enum     Read
-
-
+    Campaign                     String   Read
+    CampaignId                   Id       Read
+    ContactId                    Id       Read
+    Status                       Enum     Read
 Company
-
-AccountId                    Id       Edit Delete Add Read
-Address1Type                 String   Edit Delete Add Read
-Address2Street1              String   Edit Delete Add Read
-Address2Street2              String   Edit Delete Add Read
-Address2Type                 String   Edit Delete Add Read
-Address3Street1              String   Edit Delete Add Read
-Address3Street2              String   Edit Delete Add Read
-Address3Type                 String   Edit Delete Add Read
-Anniversary                  Date     Edit Delete Add Read
-AssistantName                String   Edit Delete Add Read
-AssistantPhone               String   Edit Delete Add Read
-BillingInformation           String   Edit Delete Add Read
-Birthday                     Date     Edit Delete Add Read
-City                         String   Edit Delete Add Read
-City2                        String   Edit Delete Add Read
-City3                        String   Edit Delete Add Read
-Company                      String   Edit Delete Add Read
-CompanyID                    Id       Edit Delete Add Read
-ContactNotes                 String   Edit Delete Add Read
-ContactType                  String   Edit Delete Add Read
-Country                      String   Edit Delete Add Read
-Country2                     String   Edit Delete Add Read
-Country3                     String   Edit Delete Add Read
-CreatedBy                    Id       Read
-DateCreated                  DateTime Read
-Email                        String   Edit Delete Add Read
-EmailAddress2                String   Edit Delete Add Read
-EmailAddress3                String   Edit Delete Add Read
-Fax1                         String   Edit Delete Add Read
-Fax1Type                     String   Edit Delete Add Read
-Fax2                         String   Edit Delete Add Read
-Fax2Type                     String   Edit Delete Add Read
-FirstName                    String   Edit Delete Add Read
-Groups                       String   Read
-Id                           Id       Read
-JobTitle                     String   Edit Delete Add Read
-LastName                     String   Edit Delete Add Read
-LastUpdated                  DateTime Read
-LastUpdatedBy                Id       Read
-MiddleName                   String   Edit Delete Add Read
-Nickname                     String   Edit Delete Add Read
-OwnerID                      Id       Edit Delete Add Read
-Password                     String   Edit Delete Add Read
-Phone1                       String   Edit Delete Add Read
-Phone1Ext                    String   Edit Delete Add Read
-Phone1Type                   String   Edit Delete Add Read
-Phone2                       String   Edit Delete Add Read
-Phone2Ext                    String   Edit Delete Add Read
-Phone2Type                   String   Edit Delete Add Read
-Phone3                       String   Edit Delete Add Read
-Phone3Ext                    String   Edit Delete Add Read
-Phone3Type                   String   Edit Delete Add Read
-Phone4                       String   Edit Delete Add Read
-Phone4Ext                    String   Edit Delete Add Read
-Phone4Type                   String   Edit Delete Add Read
-Phone5                       String   Edit Delete Add Read
-Phone5Ext                    String   Edit Delete Add Read
-Phone5Type                   String   Edit Delete Add Read
-PostalCode                   String   Edit Delete Add Read
-PostalCode2                  String   Edit Delete Add Read
-PostalCode3                  String   Edit Delete Add Read
-ReferralCode                 String   Edit Delete Add Read
-SpouseName                   String   Edit Delete Add Read
-State                        String   Edit Delete Add Read
-State2                       String   Edit Delete Add Read
-State3                       String   Edit Delete Add Read
-StreetAddress1               String   Edit Delete Add Read
-StreetAddress2               String   Edit Delete Add Read
-Suffix                       String   Edit Delete Add Read
-Title                        String   Edit Delete Add Read
-Username                     String   Edit Delete Add Read
-Validated                    String   Read
-Website                      String   Edit Delete Add Read
-ZipFour1                     String   Edit Delete Add Read
-ZipFour2                     String   Edit Delete Add Read
-ZipFour3                     String   Edit Delete Add Read
-
-
+    AccountId                    Id       Edit Delete Add Read
+    Address1Type                 String   Edit Delete Add Read
+    Address2Street1              String   Edit Delete Add Read
+    Address2Street2              String   Edit Delete Add Read
+    Address2Type                 String   Edit Delete Add Read
+    Address3Street1              String   Edit Delete Add Read
+    Address3Street2              String   Edit Delete Add Read
+    Address3Type                 String   Edit Delete Add Read
+    Anniversary                  Date     Edit Delete Add Read
+    AssistantName                String   Edit Delete Add Read
+    AssistantPhone               String   Edit Delete Add Read
+    BillingInformation           String   Edit Delete Add Read
+    Birthday                     Date     Edit Delete Add Read
+    City                         String   Edit Delete Add Read
+    City2                        String   Edit Delete Add Read
+    City3                        String   Edit Delete Add Read
+    Company                      String   Edit Delete Add Read
+    CompanyID                    Id       Edit Delete Add Read
+    ContactNotes                 String   Edit Delete Add Read
+    ContactType                  String   Edit Delete Add Read
+    Country                      String   Edit Delete Add Read
+    Country2                     String   Edit Delete Add Read
+    Country3                     String   Edit Delete Add Read
+    CreatedBy                    Id       Read
+    DateCreated                  DateTime Read
+    Email                        String   Edit Delete Add Read
+    EmailAddress2                String   Edit Delete Add Read
+    EmailAddress3                String   Edit Delete Add Read
+    Fax1                         String   Edit Delete Add Read
+    Fax1Type                     String   Edit Delete Add Read
+    Fax2                         String   Edit Delete Add Read
+    Fax2Type                     String   Edit Delete Add Read
+    FirstName                    String   Edit Delete Add Read
+    Groups                       String   Read
+    Id                           Id       Read
+    JobTitle                     String   Edit Delete Add Read
+    LastName                     String   Edit Delete Add Read
+    LastUpdated                  DateTime Read
+    LastUpdatedBy                Id       Read
+    MiddleName                   String   Edit Delete Add Read
+    Nickname                     String   Edit Delete Add Read
+    OwnerID                      Id       Edit Delete Add Read
+    Password                     String   Edit Delete Add Read
+    Phone1                       String   Edit Delete Add Read
+    Phone1Ext                    String   Edit Delete Add Read
+    Phone1Type                   String   Edit Delete Add Read
+    Phone2                       String   Edit Delete Add Read
+    Phone2Ext                    String   Edit Delete Add Read
+    Phone2Type                   String   Edit Delete Add Read
+    Phone3                       String   Edit Delete Add Read
+    Phone3Ext                    String   Edit Delete Add Read
+    Phone3Type                   String   Edit Delete Add Read
+    Phone4                       String   Edit Delete Add Read
+    Phone4Ext                    String   Edit Delete Add Read
+    Phone4Type                   String   Edit Delete Add Read
+    Phone5                       String   Edit Delete Add Read
+    Phone5Ext                    String   Edit Delete Add Read
+    Phone5Type                   String   Edit Delete Add Read
+    PostalCode                   String   Edit Delete Add Read
+    PostalCode2                  String   Edit Delete Add Read
+    PostalCode3                  String   Edit Delete Add Read
+    ReferralCode                 String   Edit Delete Add Read
+    SpouseName                   String   Edit Delete Add Read
+    State                        String   Edit Delete Add Read
+    State2                       String   Edit Delete Add Read
+    State3                       String   Edit Delete Add Read
+    StreetAddress1               String   Edit Delete Add Read
+    StreetAddress2               String   Edit Delete Add Read
+    Suffix                       String   Edit Delete Add Read
+    Title                        String   Edit Delete Add Read
+    Username                     String   Edit Delete Add Read
+    Validated                    String   Read
+    Website                      String   Edit Delete Add Read
+    ZipFour1                     String   Edit Delete Add Read
+    ZipFour2                     String   Edit Delete Add Read
+    ZipFour3                     String   Edit Delete Add Read
 Contact
-
-AccountId                    Id       Edit Delete Add Read
-Address1Type                 String   Edit Delete Add Read
-Address2Street1              String   Edit Delete Add Read
-Address2Street2              String   Edit Delete Add Read
-Address2Type                 String   Edit Delete Add Read
-Address3Street1              String   Edit Delete Add Read
-Address3Street2              String   Edit Delete Add Read
-Address3Type                 String   Edit Delete Add Read
-Anniversary                  Date     Edit Delete Add Read
-AssistantName                String   Edit Delete Add Read
-AssistantPhone               String   Edit Delete Add Read
-BillingInformation           String   Edit Delete Add Read
-Birthday                     Date     Edit Delete Add Read
-City                         String   Edit Delete Add Read
-City2                        String   Edit Delete Add Read
-City3                        String   Edit Delete Add Read
-Company                      String   Edit Delete Add Read
-CompanyID                    Id       Edit Delete Add Read
-ContactNotes                 String   Edit Delete Add Read
-ContactType                  String   Edit Delete Add Read
-Country                      String   Edit Delete Add Read
-Country2                     String   Edit Delete Add Read
-Country3                     String   Edit Delete Add Read
-CreatedBy                    Id       Read
-DateCreated                  DateTime Read
-Email                        String   Edit Delete Add Read
-EmailAddress2                String   Edit Delete Add Read
-EmailAddress3                String   Edit Delete Add Read
-Fax1                         String   Edit Delete Add Read
-Fax1Type                     String   Edit Delete Add Read
-Fax2                         String   Edit Delete Add Read
-Fax2Type                     String   Edit Delete Add Read
-FirstName                    String   Edit Delete Add Read
-Groups                       String   Read
-Id                           Id       Read
-JobTitle                     String   Edit Delete Add Read
-LastName                     String   Edit Delete Add Read
-LastUpdated                  DateTime Read
-LastUpdatedBy                Id       Read
-LeadSourceId                 Id       Edit Add Read
-Leadsource                   String   Edit Add Read
-MiddleName                   String   Edit Delete Add Read
-Nickname                     String   Edit Delete Add Read
-OwnerID                      Id       Edit Delete Add Read
-Password                     String   Edit Delete Add Read
-Phone1                       String   Edit Delete Add Read
-Phone1Ext                    String   Edit Delete Add Read
-Phone1Type                   String   Edit Delete Add Read
-Phone2                       String   Edit Delete Add Read
-Phone2Ext                    String   Edit Delete Add Read
-Phone2Type                   String   Edit Delete Add Read
-Phone3                       String   Edit Delete Add Read
-Phone3Ext                    String   Edit Delete Add Read
-Phone3Type                   String   Edit Delete Add Read
-Phone4                       String   Edit Delete Add Read
-Phone4Ext                    String   Edit Delete Add Read
-Phone4Type                   String   Edit Delete Add Read
-Phone5                       String   Edit Delete Add Read
-Phone5Ext                    String   Edit Delete Add Read
-Phone5Type                   String   Edit Delete Add Read
-PostalCode                   String   Edit Delete Add Read
-PostalCode2                  String   Edit Delete Add Read
-PostalCode3                  String   Edit Delete Add Read
-ReferralCode                 String   Edit Delete Add Read
-SpouseName                   String   Edit Delete Add Read
-State                        String   Edit Delete Add Read
-State2                       String   Edit Delete Add Read
-State3                       String   Edit Delete Add Read
-StreetAddress1               String   Edit Delete Add Read
-StreetAddress2               String   Edit Delete Add Read
-Suffix                       String   Edit Delete Add Read
-Title                        String   Edit Delete Add Read
-Username                     String   Edit Delete Add Read
-Validated                    String   Read
-Website                      String   Edit Delete Add Read
-ZipFour1                     String   Edit Delete Add Read
-ZipFour2                     String   Edit Delete Add Read
-ZipFour3                     String   Edit Delete Add Read
-
-
+    AccountId                    Id       Edit Delete Add Read
+    Address1Type                 String   Edit Delete Add Read
+    Address2Street1              String   Edit Delete Add Read
+    Address2Street2              String   Edit Delete Add Read
+    Address2Type                 String   Edit Delete Add Read
+    Address3Street1              String   Edit Delete Add Read
+    Address3Street2              String   Edit Delete Add Read
+    Address3Type                 String   Edit Delete Add Read
+    Anniversary                  Date     Edit Delete Add Read
+    AssistantName                String   Edit Delete Add Read
+    AssistantPhone               String   Edit Delete Add Read
+    BillingInformation           String   Edit Delete Add Read
+    Birthday                     Date     Edit Delete Add Read
+    City                         String   Edit Delete Add Read
+    City2                        String   Edit Delete Add Read
+    City3                        String   Edit Delete Add Read
+    Company                      String   Edit Delete Add Read
+    CompanyID                    Id       Edit Delete Add Read
+    ContactNotes                 String   Edit Delete Add Read
+    ContactType                  String   Edit Delete Add Read
+    Country                      String   Edit Delete Add Read
+    Country2                     String   Edit Delete Add Read
+    Country3                     String   Edit Delete Add Read
+    CreatedBy                    Id       Read
+    DateCreated                  DateTime Read
+    Email                        String   Edit Delete Add Read
+    EmailAddress2                String   Edit Delete Add Read
+    EmailAddress3                String   Edit Delete Add Read
+    Fax1                         String   Edit Delete Add Read
+    Fax1Type                     String   Edit Delete Add Read
+    Fax2                         String   Edit Delete Add Read
+    Fax2Type                     String   Edit Delete Add Read
+    FirstName                    String   Edit Delete Add Read
+    Groups                       String   Read
+    Id                           Id       Read
+    JobTitle                     String   Edit Delete Add Read
+    LastName                     String   Edit Delete Add Read
+    LastUpdated                  DateTime Read
+    LastUpdatedBy                Id       Read
+    LeadSourceId                 Id       Edit Add Read
+    Leadsource                   String   Edit Add Read
+    MiddleName                   String   Edit Delete Add Read
+    Nickname                     String   Edit Delete Add Read
+    OwnerID                      Id       Edit Delete Add Read
+    Password                     String   Edit Delete Add Read
+    Phone1                       String   Edit Delete Add Read
+    Phone1Ext                    String   Edit Delete Add Read
+    Phone1Type                   String   Edit Delete Add Read
+    Phone2                       String   Edit Delete Add Read
+    Phone2Ext                    String   Edit Delete Add Read
+    Phone2Type                   String   Edit Delete Add Read
+    Phone3                       String   Edit Delete Add Read
+    Phone3Ext                    String   Edit Delete Add Read
+    Phone3Type                   String   Edit Delete Add Read
+    Phone4                       String   Edit Delete Add Read
+    Phone4Ext                    String   Edit Delete Add Read
+    Phone4Type                   String   Edit Delete Add Read
+    Phone5                       String   Edit Delete Add Read
+    Phone5Ext                    String   Edit Delete Add Read
+    Phone5Type                   String   Edit Delete Add Read
+    PostalCode                   String   Edit Delete Add Read
+    PostalCode2                  String   Edit Delete Add Read
+    PostalCode3                  String   Edit Delete Add Read
+    ReferralCode                 String   Edit Delete Add Read
+    SpouseName                   String   Edit Delete Add Read
+    State                        String   Edit Delete Add Read
+    State2                       String   Edit Delete Add Read
+    State3                       String   Edit Delete Add Read
+    StreetAddress1               String   Edit Delete Add Read
+    StreetAddress2               String   Edit Delete Add Read
+    Suffix                       String   Edit Delete Add Read
+    Title                        String   Edit Delete Add Read
+    Username                     String   Edit Delete Add Read
+    Validated                    String   Read
+    Website                      String   Edit Delete Add Read
+    ZipFour1                     String   Edit Delete Add Read
+    ZipFour2                     String   Edit Delete Add Read
+    ZipFour3                     String   Edit Delete Add Read
 ContactAction
-
-Accepted                     Integer  Edit Delete Add Read
-ActionDate                   DateTime Edit Delete Add Read
-ActionDescription            String   Edit Delete Add Read
-ActionType                   String   Edit Delete Add Read
-CompletionDate               DateTime Edit Delete Add Read
-ContactId                    Id       Edit Delete Add Read
-CreatedBy                    Id       Edit Delete Add Read
-CreationDate                 DateTime Edit Delete Add Read
-CreationNotes                String   Edit Delete Add Read
-EndDate                      DateTime Edit Delete Add Read
-Id                           Id       Read
-IsAppointment                Integer  Edit Delete Add Read
-LastUpdated                  DateTime Read
-LastUpdatedBy                Id       Read
-ObjectType                   Enum     Edit Delete Add Read
-OpportunityId                Id       Edit Delete Add Read
-PopupDate                    DateTime Edit Delete Add Read
-Priority                     Integer  Edit Delete Add Read
-UserID                       Id       Edit Delete Add Read
-
-
+    Accepted                     Integer  Edit Delete Add Read
+    ActionDate                   DateTime Edit Delete Add Read
+    ActionDescription            String   Edit Delete Add Read
+    ActionType                   String   Edit Delete Add Read
+    CompletionDate               DateTime Edit Delete Add Read
+    ContactId                    Id       Edit Delete Add Read
+    CreatedBy                    Id       Edit Delete Add Read
+    CreationDate                 DateTime Edit Delete Add Read
+    CreationNotes                String   Edit Delete Add Read
+    EndDate                      DateTime Edit Delete Add Read
+    Id                           Id       Read
+    IsAppointment                Integer  Edit Delete Add Read
+    LastUpdated                  DateTime Read
+    LastUpdatedBy                Id       Read
+    ObjectType                   Enum     Edit Delete Add Read
+    OpportunityId                Id       Edit Delete Add Read
+    PopupDate                    DateTime Edit Delete Add Read
+    Priority                     Integer  Edit Delete Add Read
+    UserID                       Id       Edit Delete Add Read
 ContactGroup
-
-GroupCategoryId              Id       Edit Add Read
-GroupDescription             String   Edit Add Read
-GroupName                    String   Edit Add Read
-Id                           Id       Read
-
-
+    GroupCategoryId              Id       Edit Add Read
+    GroupDescription             String   Edit Add Read
+    GroupName                    String   Edit Add Read
+    Id                           Id       Read
 ContactGroupAssign
-
-Contact.Address1Type         String   Read
-Contact.Address2Street1      String   Read
-Contact.Address2Street2      String   Read
-Contact.Address2Type         String   Read
-Contact.Address3Street1      String   Read
-Contact.Address3Street2      String   Read
-Contact.Address3Type         String   Read
-Contact.Anniversary          Date     Read
-Contact.AssistantName        String   Read
-Contact.AssistantPhone       String   Read
-Contact.BillingInformation   String   Read
-Contact.Birthday             String   Read
-Contact.City                 String   Read
-Contact.City2                String   Read
-Contact.City3                String   Read
-Contact.Company              String   Read
-Contact.CompanyID            Id       Read
-Contact.ContactNotes         String   Read
-Contact.ContactType          String   Read
-Contact.Country              String   Read
-Contact.Country2             String   Read
-Contact.Country3             String   Read
-Contact.CreatedBy            Id       Read
-Contact.CustomDate2          DateTime Read
-Contact.CustomDate3          DateTime Read
-Contact.CustomDate1          DateTime Read
-Contact.CustomDate4          DateTime Read
-Contact.CustomDate5          DateTime Read
-Contact.CustomDbl1           Double   Read
-Contact.CustomDbl2           Double   Read
-Contact.CustomDbl3           Double   Read
-Contact.CustomDbl4           Double   Read
-Contact.CustomDbl5           Double   Read
-Contact.CustomField1         String   Read
-Contact.CustomField10        String   Read
-Contact.CustomField2         String   Read
-Contact.CustomField3         String   Read
-Contact.CustomField4         String   Read
-Contact.CustomField5         String   Read
-Contact.CustomField6         String   Read
-Contact.CustomField7         String   Read
-Contact.CustomField8         String   Read
-Contact.CustomField9         String   Read
-Contact.DateCreated          DateTime Read
-Contact.Email                String   Read
-Contact.EmailAddress2        String   Read
-Contact.EmailAddress3        String   Read
-Contact.Fax1                 String   Read
-Contact.Fax1Type             String   Read
-Contact.Fax2                 String   Read
-Contact.Fax2Type             String   Read
-Contact.FirstName            String   Read
-Contact.Groups               String   Read
-Contact.HTMLSignature        String   Read
-Contact.Id                   Id       Read
-Contact.JobTitle             String   Read
-Contact.LastName             String   Read
-Contact.LastUpdated          String   Read
-Contact.LastUpdatedBy        String   Read
-Contact.Leadsource           String   Read
-Contact.MiddleName           String   Read
-Contact.Nickname             String   Read
-Contact.OwnerID              Id       Read
-Contact.Phone1               String   Read
-Contact.Phone1Ext            String   Read
-Contact.Phone1Type           String   Read
-Contact.Phone2               String   Read
-Contact.Phone2Ext            String   Read
-Contact.Phone2Type           String   Read
-Contact.Phone3               String   Read
-Contact.Phone3Ext            String   Read
-Contact.Phone3Type           String   Read
-Contact.Phone4               String   Read
-Contact.Phone4Ext            String   Read
-Contact.Phone4Type           String   Read
-Contact.Phone5               String   Read
-Contact.Phone5Ext            String   Read
-Contact.Phone5Type           String   Read
-Contact.PostalCode           String   Read
-Contact.PostalCode2          String   Read
-Contact.PostalCode3          String   Read
-Contact.ReferralCode         String   Read
-Contact.Signature            String   Read
-Contact.SpouseName           String   Read
-Contact.State                String   Read
-Contact.State2               String   Read
-Contact.State3               String   Read
-Contact.StreetAddress1       String   Read
-Contact.StreetAddress2       String   Read
-Contact.Suffix               String   Read
-Contact.Title                String   Read
-Contact.Website              String   Read
-Contact.ZipFour1             String   Read
-Contact.ZipFour2             String   Read
-Contact.ZipFour3             String   Read
-ContactGroup                 String   Read
-ContactId                    Id       Read
-DateCreated                  DateTime Read
-GroupId                      Id       Read
-
-
+    Contact.Address1Type         String   Read
+    Contact.Address2Street1      String   Read
+    Contact.Address2Street2      String   Read
+    Contact.Address2Type         String   Read
+    Contact.Address3Street1      String   Read
+    Contact.Address3Street2      String   Read
+    Contact.Address3Type         String   Read
+    Contact.Anniversary          Date     Read
+    Contact.AssistantName        String   Read
+    Contact.AssistantPhone       String   Read
+    Contact.BillingInformation   String   Read
+    Contact.Birthday             String   Read
+    Contact.City                 String   Read
+    Contact.City2                String   Read
+    Contact.City3                String   Read
+    Contact.Company              String   Read
+    Contact.CompanyID            Id       Read
+    Contact.ContactNotes         String   Read
+    Contact.ContactType          String   Read
+    Contact.Country              String   Read
+    Contact.Country2             String   Read
+    Contact.Country3             String   Read
+    Contact.CreatedBy            Id       Read
+    Contact.CustomDate2          DateTime Read
+    Contact.CustomDate3          DateTime Read
+    Contact.CustomDate1          DateTime Read
+    Contact.CustomDate4          DateTime Read
+    Contact.CustomDate5          DateTime Read
+    Contact.CustomDbl1           Double   Read
+    Contact.CustomDbl2           Double   Read
+    Contact.CustomDbl3           Double   Read
+    Contact.CustomDbl4           Double   Read
+    Contact.CustomDbl5           Double   Read
+    Contact.CustomField1         String   Read
+    Contact.CustomField10        String   Read
+    Contact.CustomField2         String   Read
+    Contact.CustomField3         String   Read
+    Contact.CustomField4         String   Read
+    Contact.CustomField5         String   Read
+    Contact.CustomField6         String   Read
+    Contact.CustomField7         String   Read
+    Contact.CustomField8         String   Read
+    Contact.CustomField9         String   Read
+    Contact.DateCreated          DateTime Read
+    Contact.Email                String   Read
+    Contact.EmailAddress2        String   Read
+    Contact.EmailAddress3        String   Read
+    Contact.Fax1                 String   Read
+    Contact.Fax1Type             String   Read
+    Contact.Fax2                 String   Read
+    Contact.Fax2Type             String   Read
+    Contact.FirstName            String   Read
+    Contact.Groups               String   Read
+    Contact.HTMLSignature        String   Read
+    Contact.Id                   Id       Read
+    Contact.JobTitle             String   Read
+    Contact.LastName             String   Read
+    Contact.LastUpdated          String   Read
+    Contact.LastUpdatedBy        String   Read
+    Contact.Leadsource           String   Read
+    Contact.MiddleName           String   Read
+    Contact.Nickname             String   Read
+    Contact.OwnerID              Id       Read
+    Contact.Phone1               String   Read
+    Contact.Phone1Ext            String   Read
+    Contact.Phone1Type           String   Read
+    Contact.Phone2               String   Read
+    Contact.Phone2Ext            String   Read
+    Contact.Phone2Type           String   Read
+    Contact.Phone3               String   Read
+    Contact.Phone3Ext            String   Read
+    Contact.Phone3Type           String   Read
+    Contact.Phone4               String   Read
+    Contact.Phone4Ext            String   Read
+    Contact.Phone4Type           String   Read
+    Contact.Phone5               String   Read
+    Contact.Phone5Ext            String   Read
+    Contact.Phone5Type           String   Read
+    Contact.PostalCode           String   Read
+    Contact.PostalCode2          String   Read
+    Contact.PostalCode3          String   Read
+    Contact.ReferralCode         String   Read
+    Contact.Signature            String   Read
+    Contact.SpouseName           String   Read
+    Contact.State                String   Read
+    Contact.State2               String   Read
+    Contact.State3               String   Read
+    Contact.StreetAddress1       String   Read
+    Contact.StreetAddress2       String   Read
+    Contact.Suffix               String   Read
+    Contact.Title                String   Read
+    Contact.Website              String   Read
+    Contact.ZipFour1             String   Read
+    Contact.ZipFour2             String   Read
+    Contact.ZipFour3             String   Read
+    ContactGroup                 String   Read
+    ContactId                    Id       Read
+    DateCreated                  DateTime Read
+    GroupId                      Id       Read
 ContactGroupCategory
-
-CategoryDescription          String   Edit Add Read
-CategoryName                 String   Edit Add Read
-Id                           Id       Read
-
-
+    CategoryDescription          String   Edit Add Read
+    CategoryName                 String   Edit Add Read
+    Id                           Id       Read
 CreditCard
-
-BillAddress1                 String   Edit Add Read
-BillAddress2                 String   Edit Add Read
-BillCity                     String   Edit Add Read
-BillCountry                  String   Edit Add Read
-BillName                     String   Edit Add Read
-BillState                    String   Edit Add Read
-BillZip                      String   Edit Add Read
-CVV2                         String   Edit Add
-CardNumber                   String   Add
-CardType                     String   Edit Add Read
-ContactId                    Id       Add Read
-Email                        String   Edit Add Read
-ExpirationMonth              String   Edit Add Read
-ExpirationYear               String   Edit Add Read
-FirstName                    String   Edit Add Read
-Id                           Id       Read
-Last4                        String   Read
-LastName                     String   Edit Add Read
-MaestroIssueNumber           String   Edit Add Read
-NameOnCard                   String   Edit Add Read
-PhoneNumber                  String   Edit Add Read
-ShipAddress1                 String   Edit Add Read
-ShipAddress2                 String   Edit Add Read
-ShipCity                     String   Edit Add Read
-ShipCompanyName              String   Edit Add Read
-ShipCountry                  String   Edit Add Read
-ShipFirstName                String   Edit Add Read
-ShipLastName                 String   Edit Add Read
-ShipMiddleName               String   Edit Add Read
-ShipName                     String   Edit Add Read
-ShipPhoneNumber              String   Edit Add Read
-ShipState                    String   Edit Add Read
-ShipZip                      String   Edit Add Read
-StartDateMonth               String   Edit Add Read
-StartDateYear                String   Edit Add Read
-Status                       Integer  Read
-
-
+    BillAddress1                 String   Edit Add Read
+    BillAddress2                 String   Edit Add Read
+    BillCity                     String   Edit Add Read
+    BillCountry                  String   Edit Add Read
+    BillName                     String   Edit Add Read
+    BillState                    String   Edit Add Read
+    BillZip                      String   Edit Add Read
+    CVV2                         String   Edit Add
+    CardNumber                   String   Add
+    CardType                     String   Edit Add Read
+    ContactId                    Id       Add Read
+    Email                        String   Edit Add Read
+    ExpirationMonth              String   Edit Add Read
+    ExpirationYear               String   Edit Add Read
+    FirstName                    String   Edit Add Read
+    Id                           Id       Read
+    Last4                        String   Read
+    LastName                     String   Edit Add Read
+    MaestroIssueNumber           String   Edit Add Read
+    NameOnCard                   String   Edit Add Read
+    PhoneNumber                  String   Edit Add Read
+    ShipAddress1                 String   Edit Add Read
+    ShipAddress2                 String   Edit Add Read
+    ShipCity                     String   Edit Add Read
+    ShipCompanyName              String   Edit Add Read
+    ShipCountry                  String   Edit Add Read
+    ShipFirstName                String   Edit Add Read
+    ShipLastName                 String   Edit Add Read
+    ShipMiddleName               String   Edit Add Read
+    ShipName                     String   Edit Add Read
+    ShipPhoneNumber              String   Edit Add Read
+    ShipState                    String   Edit Add Read
+    ShipZip                      String   Edit Add Read
+    StartDateMonth               String   Edit Add Read
+    StartDateYear                String   Edit Add Read
+    Status                       Integer  Read
 DataFormField
-
-DataType                     Integer  Read
-DefaultValue                 String   Edit Read
-FormId                       Id       Read
-GroupId                      Id       Edit Read
-Id                           Id       Read
-Label                        String   Edit Read
-ListRows                     Integer  Edit Read
-Name                         String   Edit Read
-Values                       String   Edit Read
-
-
+    DataType                     Integer  Read
+    DefaultValue                 String   Edit Read
+    FormId                       Id       Read
+    GroupId                      Id       Edit Read
+    Id                           Id       Read
+    Label                        String   Edit Read
+    ListRows                     Integer  Edit Read
+    Name                         String   Edit Read
+    Values                       String   Edit Read
 DataFormGroup
-
-Id                           Id       Read
-Name                         String   Read
-TabId                        Id       Read
-
-
+    Id                           Id       Read
+    Name                         String   Read
+    TabId                        Id       Read
 DataFormTab
-
-FormId                       Id       Read
-Id                           Id       Read
-TabName                      String   Read
-
-
+    FormId                       Id       Read
+    Id                           Id       Read
+    TabName                      String   Read
 Expense
-
-ContactId                    Id       Read
-DateIncurred                 DateTime Read
-ExpenseAmt                   Double   Read
-ExpenseType                  Enum     Read
-Id                           Id       Read
-TypeId                       Id       Read
-
-
+    ContactId                    Id       Read
+    DateIncurred                 DateTime Read
+    ExpenseAmt                   Double   Read
+    ExpenseType                  Enum     Read
+    Id                           Id       Read
+    TypeId                       Id       Read
 FileBox
-
-ContactId                    Id       Read
-Extension                    String   Read
-FileName                     String   Read
-FileSize                     Long     Read
-Id                           Id       Read
-Public                       Integer  Read
-
-
+    ContactId                    Id       Read
+    Extension                    String   Read
+    FileName                     String   Read
+    FileSize                     Long     Read
+    Id                           Id       Read
+    Public                       Integer  Read
 GroupAssign
-
-Admin                        Id       Read
-GroupId                      Id       Read
-Id                           Id       Read
-UserId                       Id       Read
-
-
+    Admin                        Id       Read
+    GroupId                      Id       Read
+    Id                           Id       Read
+    UserId                       Id       Read
 Invoice
-
-AffiliateId                  Id       Read
-ContactId                    Id       Read
-CreditStatus                 Integer  Read
-DateCreated                  DateTime Read
-Description                  String   Read
-Id                           Id       Read
-InvoiceTotal                 Double   Read
-InvoiceType                  String   Read
-JobId                        Id       Read
-LeadAffiliateId              Id       Read
-PayPlanStatus                Integer  Read
-PayStatus                    Integer  Read
-ProductSold                  String   Read
-PromoCode                    String   Read
-RefundStatus                 Integer  Read
-Synced                       Integer  Read
-TotalDue                     Double   Read
-TotalPaid                    Double   Read
-
-
+    AffiliateId                  Id       Read
+    ContactId                    Id       Read
+    CreditStatus                 Integer  Read
+    DateCreated                  DateTime Read
+    Description                  String   Read
+    Id                           Id       Read
+    InvoiceTotal                 Double   Read
+    InvoiceType                  String   Read
+    JobId                        Id       Read
+    LeadAffiliateId              Id       Read
+    PayPlanStatus                Integer  Read
+    PayStatus                    Integer  Read
+    ProductSold                  String   Read
+    PromoCode                    String   Read
+    RefundStatus                 Integer  Read
+    Synced                       Integer  Read
+    TotalDue                     Double   Read
+    TotalPaid                    Double   Read
 InvoiceItem
-
-CommissionStatus             Integer  Edit Add Read
-DateCreated                  DateTime Read
-Description                  String   Edit Add Read
-Discount                     Double   Edit Add Read
-Id                           Id       Read
-InvoiceAmt                   Double   Edit Add Read
-InvoiceId                    Id       Edit Add Read
-OrderItemId                  Id       Read
-
-
+    CommissionStatus             Integer  Edit Add Read
+    DateCreated                  DateTime Read
+    Description                  String   Edit Add Read
+    Discount                     Double   Edit Add Read
+    Id                           Id       Read
+    InvoiceAmt                   Double   Edit Add Read
+    InvoiceId                    Id       Edit Add Read
+    OrderItemId                  Id       Read
 InvoicePayment
-
-Amt                          Double   Read
-Id                           Id       Read
-InvoiceId                    Id       Read
-PayDate                      Date     Read
-PayStatus                    String   Read
-PaymentId                    Id       Read
-SkipCommission               Integer  Read
-
-
+    Amt                          Double   Read
+    Id                           Id       Read
+    InvoiceId                    Id       Read
+    PayDate                      Date     Read
+    PayStatus                    String   Read
+    PaymentId                    Id       Read
+    SkipCommission               Integer  Read
 Job
-
-ContactId                    Id       Edit Add Read
-DateCreated                  DateTime Read
-DueDate                      Date     Edit Add Read
-Id                           Id       Read
-JobNotes                     String   Edit Add Read
-JobRecurringId               Id       Read
-JobStatus                    String   Edit Add Read
-JobTitle                     String   Edit Add Read
-OrderStatus                  Integer  Edit Add Read
-OrderType                    String   Edit Add Read
-ProductId                    Id       Edit Add Read
-ShipCity                     String   Edit Add Read
-ShipCompany                  String   Edit Add Read
-ShipCountry                  String   Edit Add Read
-ShipFirstName                String   Edit Add Read
-ShipLastName                 String   Edit Add Read
-ShipMiddleName               String   Edit Add Read
-ShipPhone                    String   Edit Add Read
-ShipState                    String   Edit Add Read
-ShipStreet1                  String   Edit Add Read
-ShipStreet2                  String   Edit Add Read
-ShipZip                      String   Edit Add Read
-StartDate                    Date     Edit Add Read
-
-
+    ContactId                    Id       Edit Add Read
+    DateCreated                  DateTime Read
+    DueDate                      Date     Edit Add Read
+    Id                           Id       Read
+    JobNotes                     String   Edit Add Read
+    JobRecurringId               Id       Read
+    JobStatus                    String   Edit Add Read
+    JobTitle                     String   Edit Add Read
+    OrderStatus                  Integer  Edit Add Read
+    OrderType                    String   Edit Add Read
+    ProductId                    Id       Edit Add Read
+    ShipCity                     String   Edit Add Read
+    ShipCompany                  String   Edit Add Read
+    ShipCountry                  String   Edit Add Read
+    ShipFirstName                String   Edit Add Read
+    ShipLastName                 String   Edit Add Read
+    ShipMiddleName               String   Edit Add Read
+    ShipPhone                    String   Edit Add Read
+    ShipState                    String   Edit Add Read
+    ShipStreet1                  String   Edit Add Read
+    ShipStreet2                  String   Edit Add Read
+    ShipZip                      String   Edit Add Read
+    StartDate                    Date     Edit Add Read
 JobRecurringInstance
-
-AutoCharge                   Integer  Edit Add Read
-DateCreated                  DateTime Read
-Description                  String   Edit Add Read
-EndDate                      Date     Edit Add Read
-Id                           Id       Read
-InvoiceItemId                Id       Edit Add Read
-RecurringId                  Id       Edit Add Read
-StartDate                    Date     Edit Add Read
-Status                       Integer  Edit Add Read
-
-
+    AutoCharge                   Integer  Edit Add Read
+    DateCreated                  DateTime Read
+    Description                  String   Edit Add Read
+    EndDate                      Date     Edit Add Read
+    Id                           Id       Read
+    InvoiceItemId                Id       Edit Add Read
+    RecurringId                  Id       Edit Add Read
+    StartDate                    Date     Edit Add Read
+    Status                       Integer  Edit Add Read
 Lead
-
-AffiliateId                  Id       Edit Delete Add Read
-ContactID                    Id       Edit Delete Add Read
-CreatedBy                    Id       Edit Delete Add Read
-DateCreated                  DateTime Edit Delete Read
-EstimatedCloseDate           DateTime Edit Delete Add Read
-Id                           Id       Read
-LastUpdated                  DateTime Edit Delete Read
-LastUpdatedBy                Id       Edit Delete Add Read
-Leadsource                   String   Add Read
-NextActionDate               DateTime Edit Delete Add Read
-NextActionNotes              String   Edit Delete Add Read
-Objection                    String   Edit Delete Add Read
-OpportunityNotes             String   Edit Delete Add Read
-OpportunityTitle             String   Edit Delete Add Read
-ProjectedRevenueHigh         Double   Edit Delete Add Read
-ProjectedRevenueLow          Double   Edit Delete Add Read
-StageID                      Id       Edit Delete Add Read
-StatusID                     Id       Edit Delete Add Read
-UserID                       Id       Edit Delete Add Read
-
-
+    AffiliateId                  Id       Edit Delete Add Read
+    ContactID                    Id       Edit Delete Add Read
+    CreatedBy                    Id       Edit Delete Add Read
+    DateCreated                  DateTime Edit Delete Read
+    EstimatedCloseDate           DateTime Edit Delete Add Read
+    Id                           Id       Read
+    LastUpdated                  DateTime Edit Delete Read
+    LastUpdatedBy                Id       Edit Delete Add Read
+    Leadsource                   String   Add Read
+    NextActionDate               DateTime Edit Delete Add Read
+    NextActionNotes              String   Edit Delete Add Read
+    Objection                    String   Edit Delete Add Read
+    OpportunityNotes             String   Edit Delete Add Read
+    OpportunityTitle             String   Edit Delete Add Read
+    ProjectedRevenueHigh         Double   Edit Delete Add Read
+    ProjectedRevenueLow          Double   Edit Delete Add Read
+    StageID                      Id       Edit Delete Add Read
+    StatusID                     Id       Edit Delete Add Read
+    UserID                       Id       Edit Delete Add Read
 LeadSource
-
-CostPerLead                  String   Edit Add Read
-Description                  String   Edit Add Read
-EndDate                      Date     Edit Add Read
-Id                           Id       Read
-LeadSourceCategoryId         Id       Edit Add Read
-Medium                       String   Edit Add Read
-Message                      String   Edit Add Read
-Name                         String   Edit Add Read
-StartDate                    Date     Edit Add Read
-Status                       String   Edit Add Read
-Vendor                       String   Edit Add Read
-
-
+    CostPerLead                  String   Edit Add Read
+    Description                  String   Edit Add Read
+    EndDate                      Date     Edit Add Read
+    Id                           Id       Read
+    LeadSourceCategoryId         Id       Edit Add Read
+    Medium                       String   Edit Add Read
+    Message                      String   Edit Add Read
+    Name                         String   Edit Add Read
+    StartDate                    Date     Edit Add Read
+    Status                       String   Edit Add Read
+    Vendor                       String   Edit Add Read
 LeadSourceCategory
-
-Description                  String   Edit Add Read
-Id                           Id       Read
-Name                         String   Edit Add Read
-
-
+    Description                  String   Edit Add Read
+    Id                           Id       Read
+    Name                         String   Edit Add Read
 LeadSourceExpense
-
-Amount                       Double   Edit Delete Add Read
-DateIncurred                 DateTime Edit Delete Add Read
-Id                           Id       Read
-LeadSourceId                 Id       Edit Delete Add Read
-LeadSourceRecurringExpenseId          Id =Edit Delete Add Read
-Notes                        String   Edit Delete Add Read
-Title                        String   Edit Delete Add Read
-
-
+    Amount                       Double   Edit Delete Add Read
+    DateIncurred                 DateTime Edit Delete Add Read
+    Id                           Id       Read
+    LeadSourceId                 Id       Edit Delete Add Read
+    LeadSourceRecurringExpenseId          Id =Edit Delete Add Read
+    Notes                        String   Edit Delete Add Read
+    Title                        String   Edit Delete Add Read
 LeadSourceRecurringExpense
-
-Amount                       Double   Edit Delete Add Read
-EndDate                      DateTime Edit Delete Add Read
-Id                           Id       Read
-LeadSourceId                 Id       Edit Delete Add Read
-NextExpenseDate              DateTime Edit Delete Add Read
-Notes                        String   Edit Delete Add Read
-StartDate                    DateTime Edit Delete Add Read
-Title                        String   Edit Delete Add Read
-
-
+    Amount                       Double   Edit Delete Add Read
+    EndDate                      DateTime Edit Delete Add Read
+    Id                           Id       Read
+    LeadSourceId                 Id       Edit Delete Add Read
+    NextExpenseDate              DateTime Edit Delete Add Read
+    Notes                        String   Edit Delete Add Read
+    StartDate                    DateTime Edit Delete Add Read
+    Title                        String   Edit Delete Add Read
 MtgLead
-
-ActualCloseDate              DateTime Read
-ApplicationDate              DateTime Read
-CreditReportDate             DateTime Read
-DateAppraisalDone            DateTime Read
-DateAppraisalOrdered         DateTime Read
-DateAppraisalReceived        DateTime Read
-DateRateLockExpires          DateTime Read
-DateRateLocked               DateTime Read
-DateTitleOrdered             DateTime Read
-DateTitleReceived            DateTime Read
-FundingDate                  DateTime Read
-Id                           Id       Read
-
-
+    ActualCloseDate              DateTime Read
+    ApplicationDate              DateTime Read
+    CreditReportDate             DateTime Read
+    DateAppraisalDone            DateTime Read
+    DateAppraisalOrdered         DateTime Read
+    DateAppraisalReceived        DateTime Read
+    DateRateLockExpires          DateTime Read
+    DateRateLocked               DateTime Read
+    DateTitleOrdered             DateTime Read
+    DateTitleReceived            DateTime Read
+    FundingDate                  DateTime Read
+    Id                           Id       Read
 OrderItem
-
-CPU                          Double   Edit Add Read
-Id                           Id       Read
-ItemDescription              String   Edit Add Read
-ItemName                     String   Edit Add Read
-ItemType                     Integer  Edit Add Read
-Notes                        String   Edit Add Read
-OrderId                      Id       Edit Add Read
-PPU                          Double   Edit Add Read
-ProductId                    Id       Edit Add Read
-Qty                          Integer  Edit Add Read
-SubscriptionPlanId           Id       Edit Add Read
-
-
+    CPU                          Double   Edit Add Read
+    Id                           Id       Read
+    ItemDescription              String   Edit Add Read
+    ItemName                     String   Edit Add Read
+    ItemType                     Integer  Edit Add Read
+    Notes                        String   Edit Add Read
+    OrderId                      Id       Edit Add Read
+    PPU                          Double   Edit Add Read
+    ProductId                    Id       Edit Add Read
+    Qty                          Integer  Edit Add Read
+    SubscriptionPlanId           Id       Edit Add Read
 PayPlan
-
-AmtDue                       Double   Read
-DateDue                      Date     Read
-FirstPayAmt                  Double   Read
-Id                           Id       Read
-InitDate                     Date     Read
-InvoiceId                    Id       Read
-StartDate                    Date     Read
-Type                         Integer  Read
-
-
+    AmtDue                       Double   Read
+    DateDue                      Date     Read
+    FirstPayAmt                  Double   Read
+    Id                           Id       Read
+    InitDate                     Date     Read
+    InvoiceId                    Id       Read
+    StartDate                    Date     Read
+    Type                         Integer  Read
 PayPlanItem
-
-AmtDue                       Double   Read
-AmtPaid                      Double   Read
-DateDue                      Date     Read
-Id                           Id       Read
-PayPlanId                    Id       Read
-Status                       Integer  Read
-
-
+    AmtDue                       Double   Read
+    AmtPaid                      Double   Read
+    DateDue                      Date     Read
+    Id                           Id       Read
+    PayPlanId                    Id       Read
+    Status                       Integer  Read
 Payment
-
-ChargeId                     Id       Read
-Commission                   Integer  Read
-ContactId                    Id       Read
-Id                           Id       Read
-InvoiceId                    Id       Read
-PayAmt                       Double   Read
-PayDate                      Date     Read
-PayNote                      String   Read
-PayType                      String   Read
-RefundId                     Id       Read
-Synced                       Integer  Read
-UserId                       Id       Read
-
-
+    ChargeId                     Id       Read
+    Commission                   Integer  Read
+    ContactId                    Id       Read
+    Id                           Id       Read
+    InvoiceId                    Id       Read
+    PayAmt                       Double   Read
+    PayDate                      Date     Read
+    PayNote                      String   Read
+    PayType                      String   Read
+    RefundId                     Id       Read
+    Synced                       Integer  Read
+    UserId                       Id       Read
 Product
-
-BottomHTML                   String   Edit Add Read
-CityTaxable                  Integer  Edit Add Read
-CountryTaxable               Integer  Edit Add Read
-Description                  String   Edit Add Read
-HideInStore                  Integer  Edit Add Read
-Id                           Id       Read
-InventoryLimit               Integer  Edit Add Read
-InventoryNotifiee            String   Edit Add Read
-IsPackage                    Integer  Edit Add Read
-LargeImage                   Blob     Edit Add Read
-NeedsDigitalDelivery         Integer  Edit Add Read
-ProductName                  String   Edit Add Read
-ProductPrice                 Double   Edit Add Read
-Shippable                    Integer  Edit Add Read
-ShippingTime                 String   Edit Add Read
-ShortDescription             String   Edit Add Read
-Sku                          String   Edit Add Read
-StateTaxable                 Integer  Edit Add Read
-Status                       Integer  Edit Add Read
-Taxable                      Integer  Edit Add Read
-TopHTML                      String   Edit Add Read
-Weight                       Double   Edit Add Read
-
-
+    BottomHTML                   String   Edit Add Read
+    CityTaxable                  Integer  Edit Add Read
+    CountryTaxable               Integer  Edit Add Read
+    Description                  String   Edit Add Read
+    HideInStore                  Integer  Edit Add Read
+    Id                           Id       Read
+    InventoryLimit               Integer  Edit Add Read
+    InventoryNotifiee            String   Edit Add Read
+    IsPackage                    Integer  Edit Add Read
+    LargeImage                   Blob     Edit Add Read
+    NeedsDigitalDelivery         Integer  Edit Add Read
+    ProductName                  String   Edit Add Read
+    ProductPrice                 Double   Edit Add Read
+    Shippable                    Integer  Edit Add Read
+    ShippingTime                 String   Edit Add Read
+    ShortDescription             String   Edit Add Read
+    Sku                          String   Edit Add Read
+    StateTaxable                 Integer  Edit Add Read
+    Status                       Integer  Edit Add Read
+    Taxable                      Integer  Edit Add Read
+    TopHTML                      String   Edit Add Read
+    Weight                       Double   Edit Add Read
 ProductCategory
-
-CategoryDisplayName          String   Edit Delete Add Read
-CategoryImage                Blob     Edit Delete Add Read
-CategoryOrder                Integer  Edit Delete Add Read
-Id                           Id       Read
-ParentId                     Id       Edit Delete Add Read
-
-
+    CategoryDisplayName          String   Edit Delete Add Read
+    CategoryImage                Blob     Edit Delete Add Read
+    CategoryOrder                Integer  Edit Delete Add Read
+    Id                           Id       Read
+    ParentId                     Id       Edit Delete Add Read
 ProductCategoryAssign
-
-Id                           Id       Read
-ProductCategoryId            Id       Edit Add Read
-ProductId                    Id       Edit Add Read
-
-
+    Id                           Id       Read
+    ProductCategoryId            Id       Edit Add Read
+    ProductId                    Id       Edit Add Read
 ProductInterest
-
-DiscountPercent              Integer  Edit Delete Add Read
-Id                           Id       Read
-ObjType                      String   Edit Delete Add Read
-ObjectId                     Id       Edit Delete Add Read
-ProductId                    Id       Edit Delete Add Read
-ProductType                  String   Edit Delete Add Read
-Qty                          Integer  Edit Delete Add Read
-
-
+    DiscountPercent              Integer  Edit Delete Add Read
+    Id                           Id       Read
+    ObjType                      String   Edit Delete Add Read
+    ObjectId                     Id       Edit Delete Add Read
+    ProductId                    Id       Edit Delete Add Read
+    ProductType                  String   Edit Delete Add Read
+    Qty                          Integer  Edit Delete Add Read
 ProductInterestBundle
-
-BundleName                   String   Edit Add Read
-Description                  String   Edit Add Read
-Id                           Id       Read
-
-
+    BundleName                   String   Edit Add Read
+    Description                  String   Edit Add Read
+    Id                           Id       Read
 ProductOptValue
-
-Id                           Id       Edit Delete Add Read
-IsDefault                    Integer  Edit Delete Add Read
-Label                        String   Edit Delete Add Read
-Name                         String   Edit Delete Add Read
-OptionIndex                  Integer  Edit Delete Add Read
-PriceAdjustment              Double   Edit Delete Add Read
-ProductOptionId              Id       Edit Delete Add Read
-Sku                          String   Edit Delete Add Read
-
-
+    Id                           Id       Edit Delete Add Read
+    IsDefault                    Integer  Edit Delete Add Read
+    Label                        String   Edit Delete Add Read
+    Name                         String   Edit Delete Add Read
+    OptionIndex                  Integer  Edit Delete Add Read
+    PriceAdjustment              Double   Edit Delete Add Read
+    ProductOptionId              Id       Edit Delete Add Read
+    Sku                          String   Edit Delete Add Read
 ProductOption
-
-AllowSpaces                  Integer  Edit Delete Add Read
-CanContain                   String   Edit Delete Add Read
-CanEndWith                   Integer  Edit Delete Add Read
-CanStartWith                 String   Edit Delete Add Read
-Id                           Id       Edit Delete Add Read
-IsRequired                   Integer  Edit Delete Add Read
-Label                        String   Edit Delete Add Read
-MaxChars                     Integer  Edit Delete Add Read
-MinChars                     Integer  Edit Delete Add Read
-Name                         String   Edit Delete Add Read
-OptionType                   Enum     Edit Delete Add Read
-Order                        Integer  Edit Delete Add Read
-ProductId                    Id       Edit Delete Add Read
-TextMessage                  Integer  Edit Delete Add Read
-
-
+    AllowSpaces                  Integer  Edit Delete Add Read
+    CanContain                   String   Edit Delete Add Read
+    CanEndWith                   Integer  Edit Delete Add Read
+    CanStartWith                 String   Edit Delete Add Read
+    Id                           Id       Edit Delete Add Read
+    IsRequired                   Integer  Edit Delete Add Read
+    Label                        String   Edit Delete Add Read
+    MaxChars                     Integer  Edit Delete Add Read
+    MinChars                     Integer  Edit Delete Add Read
+    Name                         String   Edit Delete Add Read
+    OptionType                   Enum     Edit Delete Add Read
+    Order                        Integer  Edit Delete Add Read
+    ProductId                    Id       Edit Delete Add Read
+    TextMessage                  Integer  Edit Delete Add Read
 RecurringOrder
-
-AffiliateId                  Id       Edit Add Read
-AutoCharge                   Integer  Edit Add Read
-BillingAmt                   Double   Edit Add Read
-BillingCycle                 String   Edit Add Read
-CC1                          Id       Edit Add Read
-CC2                          Id       Edit Add Read
-ContactId                    Id       Edit Add Read
-EndDate                      Date     Edit Add Read
-Frequency                    Integer  Edit Add Read
-Id                           Id       Read
-LastBillDate                 Date     Edit Add Read
-LeadAffiliateId              Id       Edit Add Read
-MaxRetry                     Integer  Edit Add Read
-MerchantAccountId            Id       Edit Add Read
-NextBillDate                 Date     Read
-NumDaysBetweenRetry          Integer  Edit Add Read
-OriginatingOrderId           Id       Read
-PaidThruDate                 Date     Edit Add Read
-ProductId                    Id       Edit Add Read
-ProgramId                    Id       Edit Add Read
-PromoCode                    String   Edit Add Read
-Qty                          Integer  Edit Add Read
-ReasonStopped                String   Edit Add Read
-ShippingOptionId             Id       Edit Add Read
-StartDate                    Date     Edit Add Read
-Status                       String   Edit Add Read
-SubscriptionPlanId           Id       Edit Add Read
-
-
+    AffiliateId                  Id       Edit Add Read
+    AutoCharge                   Integer  Edit Add Read
+    BillingAmt                   Double   Edit Add Read
+    BillingCycle                 String   Edit Add Read
+    CC1                          Id       Edit Add Read
+    CC2                          Id       Edit Add Read
+    ContactId                    Id       Edit Add Read
+    EndDate                      Date     Edit Add Read
+    Frequency                    Integer  Edit Add Read
+    Id                           Id       Read
+    LastBillDate                 Date     Edit Add Read
+    LeadAffiliateId              Id       Edit Add Read
+    MaxRetry                     Integer  Edit Add Read
+    MerchantAccountId            Id       Edit Add Read
+    NextBillDate                 Date     Read
+    NumDaysBetweenRetry          Integer  Edit Add Read
+    OriginatingOrderId           Id       Read
+    PaidThruDate                 Date     Edit Add Read
+    ProductId                    Id       Edit Add Read
+    ProgramId                    Id       Edit Add Read
+    PromoCode                    String   Edit Add Read
+    Qty                          Integer  Edit Add Read
+    ReasonStopped                String   Edit Add Read
+    ShippingOptionId             Id       Edit Add Read
+    StartDate                    Date     Edit Add Read
+    Status                       String   Edit Add Read
+    SubscriptionPlanId           Id       Edit Add Read
 RecurringOrderWithContact
-
-AffiliateId                  Id       Read
-AutoCharge                   Integer  Read
-BillingAmt                   Double   Read
-BillingCycle                 String   Read
-CC1                          Id       Read
-CC2                          Id       Read
-City                         String   Read
-ContactId                    Id       Read
-ContactId                    Id       Read
-Country                      String   Read
-Email                        String   Read
-EmailAddress2                String   Read
-EmailAddress3                String   Read
-EndDate                      Date     Read
-FirstName                    String   Read
-Frequency                    Integer  Read
-HTMLSignature                String   Read
-LastBillDate                 Date     Read
-LastName                     String   Read
-LeadAffiliateId              Id       Read
-MaxRetry                     Integer  Read
-MerchantAccountId            Id       Read
-MiddleName                   String   Read
-NextBillDate                 Date     Read
-Nickname                     String   Read
-NumDaysBetweenRetry          Integer  Read
-PaidThruDate                 Date     Read
-Phone1                       String   Read
-Phone1Ext                    String   Read
-Phone1Type                   String   Read
-Phone2                       String   Read
-Phone2Ext                    String   Read
-Phone2Type                   String   Read
-PostalCode                   String   Read
-ProductId                    Id       Read
-ProgramId                    Id       Read
-PromoCode                    String   Read
-Qty                          Integer  Read
-ReasonStopped                String   Read
-RecurringOrderId             Id       Read
-ShippingOptionId             Integer  Read
-Signature                    String   Read
-SpouseName                   String   Read
-StartDate                    Date     Read
-State                        String   Read
-Status                       String   Read
-StreetAddress1               String   Read
-StreetAddress2               String   Read
-SubscriptionPlanId           Id       Read
-Suffix                       String   Read
-Title                        String   Read
-ZipFour1                     String   Read
-
-
+    AffiliateId                  Id       Read
+    AutoCharge                   Integer  Read
+    BillingAmt                   Double   Read
+    BillingCycle                 String   Read
+    CC1                          Id       Read
+    CC2                          Id       Read
+    City                         String   Read
+    ContactId                    Id       Read
+    ContactId                    Id       Read
+    Country                      String   Read
+    Email                        String   Read
+    EmailAddress2                String   Read
+    EmailAddress3                String   Read
+    EndDate                      Date     Read
+    FirstName                    String   Read
+    Frequency                    Integer  Read
+    HTMLSignature                String   Read
+    LastBillDate                 Date     Read
+    LastName                     String   Read
+    LeadAffiliateId              Id       Read
+    MaxRetry                     Integer  Read
+    MerchantAccountId            Id       Read
+    MiddleName                   String   Read
+    NextBillDate                 Date     Read
+    Nickname                     String   Read
+    NumDaysBetweenRetry          Integer  Read
+    PaidThruDate                 Date     Read
+    Phone1                       String   Read
+    Phone1Ext                    String   Read
+    Phone1Type                   String   Read
+    Phone2                       String   Read
+    Phone2Ext                    String   Read
+    Phone2Type                   String   Read
+    PostalCode                   String   Read
+    ProductId                    Id       Read
+    ProgramId                    Id       Read
+    PromoCode                    String   Read
+    Qty                          Integer  Read
+    ReasonStopped                String   Read
+    RecurringOrderId             Id       Read
+    ShippingOptionId             Integer  Read
+    Signature                    String   Read
+    SpouseName                   String   Read
+    StartDate                    Date     Read
+    State                        String   Read
+    Status                       String   Read
+    StreetAddress1               String   Read
+    StreetAddress2               String   Read
+    SubscriptionPlanId           Id       Read
+    Suffix                       String   Read
+    Title                        String   Read
+    ZipFour1                     String   Read
 Referral
-
-AffiliateId                  Id       Add Read
-ContactId                    Id       Add Read
-DateExpires                  Date     Add Read
-DateSet                      Date     Add Read
-IPAddress                    String   Add Read
-Id                           Id       Read
-Info                         String   Add Read
-Source                       String   Add Read
-Type                         Integer  Add Read
-
-
+    AffiliateId                  Id       Add Read
+    ContactId                    Id       Add Read
+    DateExpires                  Date     Add Read
+    DateSet                      Date     Add Read
+    IPAddress                    String   Add Read
+    Id                           Id       Read
+    Info                         String   Add Read
+    Source                       String   Add Read
+    Type                         Integer  Add Read
 SavedFilter
-
-FilterName                   String   Read
-Id                           Id       Read
-ReportStoredName             String   Read
-UserId                       String   Read
-
-
+    FilterName                   String   Read
+    Id                           Id       Read
+    ReportStoredName             String   Read
+    UserId                       String   Read
 Stage
-
-Id                           Id       Read
-StageName                    String   Read
-StageOrder                   Integer  Read
-TargetNumDays                Integer  Read
-
-
+    Id                           Id       Read
+    StageName                    String   Read
+    StageOrder                   Integer  Read
+    TargetNumDays                Integer  Read
 StageMove
-
-CreatedBy                    Id       Read
-DateCreated                  DateTime Read
-Id                           Id       Read
-MoveDate                     DateTime Read
-MoveFromStage                Id       Read
-MoveToStage                  Id       Read
-OpportunityId                Id       Read
-PrevStageMoveDate            DateTime Read
-UserId                       Id       Read
-
-
+    CreatedBy                    Id       Read
+    DateCreated                  DateTime Read
+    Id                           Id       Read
+    MoveDate                     DateTime Read
+    MoveFromStage                Id       Read
+    MoveToStage                  Id       Read
+    OpportunityId                Id       Read
+    PrevStageMoveDate            DateTime Read
+    UserId                       Id       Read
 Status
-
-Id                           Id       Read
-StatusName                   String   Read
-StatusOrder                  String   Read
-TargetNumDays                String   Read
-
-
+    Id                           Id       Read
+    StatusName                   String   Read
+    StatusOrder                  String   Read
+    TargetNumDays                String   Read
 SubscriptionPlan
-
-Active                       Boolean  Edit Add Read
-Cycle                        String   Edit Add Read
-Frequency                    Integer  Edit Add Read
-Id                           Id       Read
-PlanPrice                    Double   Edit Add Read
-PreAuthorizeAmount           Double   Edit Add Read
-ProductId                    Id       Edit Add Read
-Prorate                      Boolean  Edit Add Read
-
-
+    Active                       Boolean  Edit Add Read
+    Cycle                        String   Edit Add Read
+    Frequency                    Integer  Edit Add Read
+    Id                           Id       Read
+    PlanPrice                    Double   Edit Add Read
+    PreAuthorizeAmount           Double   Edit Add Read
+    ProductId                    Id       Edit Add Read
+    Prorate                      Boolean  Edit Add Read
 Template
-
-Categories                   String   Read
-Id                           Id       Read
-PieceTitle                   String   Read
-PieceType                    String   Read
-
-
+    Categories                   String   Read
+    Id                           Id       Read
+    PieceTitle                   String   Read
+    PieceType                    String   Read
 Ticket
-
-CloseDate                    Date     Edit Delete Add Read
-ContactId                    Id       Edit Delete Add Read
-CreatedBy                    Id       Edit Delete Add Read
-DateCreated                  DateTime Read
-DateInStage                  Date     Edit Delete Add Read
-DevId                        Id       Edit Delete Add Read
-FolowUpDate                  Date     Edit Delete Add Read
-HasCustomerCalled            Integer  Edit Delete Add Read
-Id                           Id       Read
-IssueId                      Id       Edit Delete Add Read
-LastUpdated                  DateTime Read
-LastUpdatedBy                Id       Edit Delete Add Read
-Ordering                     Double   Edit Delete Add Read
-Priority                     Integer  Edit Delete Add Read
-Stage                        Id       Edit Delete Add Read
-Summary                      String   Edit Delete Add Read
-TargetCompletionDate         Date     Edit Delete Add Read
-TicketApplication            String   Edit Delete Add Read
-TicketCategory               Id       Edit Delete Add Read
-TicketTitle                  String   Edit Delete Add Read
-TicketTypeId                 Id       Edit Delete Add Read
-TimeSpent                    Double   Edit Delete Add Read
-UserId                       Id       Edit Delete Add Read
-
-
+    CloseDate                    Date     Edit Delete Add Read
+    ContactId                    Id       Edit Delete Add Read
+    CreatedBy                    Id       Edit Delete Add Read
+    DateCreated                  DateTime Read
+    DateInStage                  Date     Edit Delete Add Read
+    DevId                        Id       Edit Delete Add Read
+    FolowUpDate                  Date     Edit Delete Add Read
+    HasCustomerCalled            Integer  Edit Delete Add Read
+    Id                           Id       Read
+    IssueId                      Id       Edit Delete Add Read
+    LastUpdated                  DateTime Read
+    LastUpdatedBy                Id       Edit Delete Add Read
+    Ordering                     Double   Edit Delete Add Read
+    Priority                     Integer  Edit Delete Add Read
+    Stage                        Id       Edit Delete Add Read
+    Summary                      String   Edit Delete Add Read
+    TargetCompletionDate         Date     Edit Delete Add Read
+    TicketApplication            String   Edit Delete Add Read
+    TicketCategory               Id       Edit Delete Add Read
+    TicketTitle                  String   Edit Delete Add Read
+    TicketTypeId                 Id       Edit Delete Add Read
+    TimeSpent                    Double   Edit Delete Add Read
+    UserId                       Id       Edit Delete Add Read
 TicketStage
-
-Id                           Id       Read
-StageName                    String   Read
-
-
+    Id                           Id       Read
+    StageName                    String   Read
 TicketType
-
-CategoryId                   Id       Read
-Id                           Id       Read
-Label                        String   Read
-
-
+    CategoryId                   Id       Read
+    Id                           Id       Read
+    Label                        String   Read
 User
-
-City                         String   Read
-Email                        String   Read
-EmailAddress2                String   Read
-EmailAddress3                String   Read
-FirstName                    String   Read
-HTMLSignature                String   Read
-Id                           Id       Read
-LastName                     String   Read
-MiddleName                   String   Read
-Nickname                     String   Read
-Phone1                       String   Read
-Phone1Ext                    String   Read
-Phone1Type                   String   Read
-Phone2                       String   Read
-Phone2Ext                    String   Read
-Phone2Type                   String   Read
-PostalCode                   String   Read
-Signature                    String   Read
-SpouseName                   String   Read
-State                        String   Read
-StreetAddress1               String   Read
-StreetAddress2               String   Read
-Suffix                       String   Read
-Title                        String   Read
-ZipFour1                     String   Read
-
-
+    City                         String   Read
+    Email                        String   Read
+    EmailAddress2                String   Read
+    EmailAddress3                String   Read
+    FirstName                    String   Read
+    HTMLSignature                String   Read
+    Id                           Id       Read
+    LastName                     String   Read
+    MiddleName                   String   Read
+    Nickname                     String   Read
+    Phone1                       String   Read
+    Phone1Ext                    String   Read
+    Phone1Type                   String   Read
+    Phone2                       String   Read
+    Phone2Ext                    String   Read
+    Phone2Type                   String   Read
+    PostalCode                   String   Read
+    Signature                    String   Read
+    SpouseName                   String   Read
+    State                        String   Read
+    StreetAddress1               String   Read
+    StreetAddress2               String   Read
+    Suffix                       String   Read
+    Title                        String   Read
+    ZipFour1                     String   Read
 UserGroup
-
-Id                           Id       Read
-Name                         String   Read
-OwnerId                      Id       Read
+    Id                           Id       Read
+    Name                         String   Read
+    OwnerId                      Id       Read
