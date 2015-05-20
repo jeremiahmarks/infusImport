@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Jeremiah Marks
 # @Date:   2015-05-16 14:03:02
-# @Last Modified 2015-05-18
-# @Last Modified time: 2015-05-18 23:28:10
+# @Last Modified 2015-05-20
+# @Last Modified time: 2015-05-20 01:18:52
 import xmlrpclib
 import time
 import random
@@ -13,6 +13,16 @@ import csv
 
 from ISProduct import products
 from ISTables import tables
+from ISTablePermissions import permissionsTable
+
+
+
+
+# Above here, imports.
+############################################################
+# And below, generators for basic functions
+
+
 
 
 
@@ -220,3 +230,4 @@ class ISServer:
 
 def newserver(appname, apikey):
     return ISServer(appname, apikey)
+
