@@ -1,0 +1,10 @@
+NameID,SKU,"GPS Manufacturer Part Number","GPS Category","GPS Enabled",Name,"Product URL",Brand,"Option Set",Description,Price,"Allow Purchases","Product Availability","Category String","Category Details","Product Files","Product Images","Meta Description","Product Condition"
+132,PLP030800,,,,"[RB]Diameter=3"",[RB]Grit=800",,,,,,,,,,,,,,"  SKU",,0.00,
+157,PLP211500,,,,"[RB]Diameter=21"",[RB]Grit=1500",,,,,,,,,,,,,,"  SKU",,0.00,
+161,PLP241500,,,,"[RB]Diameter=24"",[RB]Grit=1500",,,,,,,,,,,,,,"  SKU",,0.00,
+778,,,,,"[RB]Diameter=24""",,,,,[ADD]12,1,,,,,,,,"  Rule",Y,0
+1020,,,,,"[RB]Glass Weight=50 lb bag",,,,,[ADD]72,1,,,,,,,,"  Rule",[ADD]40,Y,0
+1021,,,,,"[RB]Glass Weight=25 lb bag",,,,,[ADD]32,1,,,,,,,,"  Rule",[ADD]15,Y,0
+1022,,,,,"[RB]Glass Weight=5 lb bag",,,,,[REMOVE]11,1,,,,,,,,"  Rule",[ADD]5,Y,0
+1023,,,,,"[RB]Glass Weight=1 lb bag",,,,,[REMOVE]24,1,,,,,,,,"  Rule",[ADD]9,Y,0
+1932,,,,,"[RB]Glass Weight=10 lb bag,[CS]Colors=Premium- Pineapple:2037.preview.jpg,Colors=Premium- Strawberry:2038.preview.jpg,Colors=Premium- Tangerine:2039.preview.jpg",,,,,[ADD]17,1,,,,,,,,"  Rule",Y,0
