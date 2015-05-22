@@ -564,24 +564,25 @@ def parseOptions(optionString,sku=None, pricing=None, currentProductOptions={}):
             options[optionType]=[]
         options[optionType].append(optionValues)
     for optionType in options.keys():
-        for eachString in options[optionType]:
-            eachString=eachString.strip(', ')
-            for eachOptionDatum in re.split(r"[\[|,^\]]*",eachString):
-                # print eachOptionDatum
-                if (len(eachOptionDatum)>0):
-                    segmentedList=re.split(r"[,=:]",eachOptionDatum)
-                    if (len(segmentedList)>1):
-                        if segmentedList[0] not in currentProductOptions.keys():
-                            currentProductOptions[segmentedList[0]]={'pricing': {}, 'options': set(), 'skud': {} }
-                        currentProductOptions[segmentedList[0]]['options'].add(segmentedList[1])
+        if optionType is not "skuPricing":
+            for eachString in options[optionType]:
+                eachString=eachString.strip(', ')
+                for eachOptionDatum in re.split(r"[\[|,^\]]*",eachString):
+                    # print eachOptionDatum
+                    if (len(eachOptionDatum)>0):
+                        segmentedList=re.split(r"[,=:]",eachOptionDatum)
+                        if (len(segmentedList)>1):
+                            if segmentedList[0] not in currentProductOptions.keys():
+                                currentProductOptions[segmentedList[0]]={'pricing': {}, 'options': set(), 'skud': {} }
+                            currentProductOptions[segmentedList[0]]['options'].add(segmentedList[1])
                         if sku is not None:
-                            if segmentedList[1] not in currentProductOptions[segmentedList[0]]['skud'].keys():
-                                currentProductOptions[segmentedList[0]]['skud'][segmentedList[1]]=[sku]
+                            if segmentedList[0] not in currentProductOptions[segmentedList[0]]['skud'].keys():
+                                currentProductOptions[segmentedList[0]]['skud'][segmentedList[0]]=[sku]
                             else:
                                 currentProductOptions[segmentedList[0]]['skud'][segmentedList[1]].append(sku)
-                    if priceChange is not None:
-                            print priceChange
-                            currentProductOptions[segmentedList[0]]['pricing'][segmentedList[1]]=priceChange
+                        if priceChange is not None:
+                                print priceChange
+                                currentProductOptions[segmentedList[0]]['pricing'][segmentedList[1]]=priceChange
 
     return currentProductOptions
 
@@ -643,7 +644,13 @@ def sampleData(productsExport=pw.passwords['importFile']):
                 #     return products
                 # def continuee():
                 #     if True:
+        trees=[]
         for eachProduct in products:
+            trees.append(eachProduct.optionsTree)
+    return trees
+def a():
+    if True:
+        if True:
             print "parsing some prods!"
         # def workaProduct(eachProduct):
             optionOrder=0
