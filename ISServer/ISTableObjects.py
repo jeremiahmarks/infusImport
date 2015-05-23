@@ -1,5 +1,25 @@
 global products
 
+############################################################
+## Some things to know:
+## 
+##  Tables that you can delete:
+deletableTables=[
+"AffResource",
+"Affiliate",
+"Company",
+"Contact",
+"ContactAction",
+"Lead",
+"LeadSourceExpense",
+"LeadSourceRecurringExpense",
+"ProductCategory",
+"ProductInterest",
+"ProductOptValue",
+"ProductOption"
+]
+
+
 class Product(object):
 
     def __init__(self, values):
