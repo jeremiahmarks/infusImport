@@ -3,13 +3,14 @@
 # @Author: Jeremiah Marks
 # @Date:   2015-05-16 14:03:02
 # @Last Modified 2015-05-23
-# @Last Modified time: 2015-05-23 00:07:55
+# @Last Modified time: 2015-05-23 23:43:08
 import xmlrpclib
 import time
 import random
 import urllib
 import base64
 import csv
+import datetime
 
 # from ISProduct import products
 from ISTables import tables
@@ -21,8 +22,8 @@ from ISTablePermissions import permissionsTable
 # Above here, imports.
 ############################################################
 # And below, generators for basic functions
-
-
+def timeStamp():
+    return datetime.datetime.now().strftime('%Y_%m_%d_%H%M%S')
 
 
 

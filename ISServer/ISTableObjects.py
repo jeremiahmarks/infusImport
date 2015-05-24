@@ -30,112 +30,112 @@ class Product(object):
             products=[]
 
         if ("BottomHTML" in values.keys()):
-            self.BottomHTML = options["BottomHTML"]#String
+            self.BottomHTML = options["BottomHTML"]  #String
         else:
             self.BottomHTML=None
 
         if ("CityTaxable" in values.keys()):
-            self.CityTaxable = options["CityTaxable"]#Integer
+            self.CityTaxable = options["CityTaxable"]  #Integer
         else:
             self.CityTaxable=None
 
         if ("CountryTaxable" in values.keys()):
-            self.CountryTaxable = options["CountryTaxable"]#Integer
+            self.CountryTaxable = options["CountryTaxable"]  #Integer
         else:
             self.CountryTaxable=None
 
         if ("Description" in values.keys()):
-            self.Description = options["Description"]#String
+            self.Description = options["Description"]  #String
         else:
             self.Description=None
 
         if ("HideInStore" in values.keys()):
-            self.HideInStore = options["HideInStore"]#Integer
+            self.HideInStore = options["HideInStore"]  #Integer
         else:
             self.HideInStore=None
 
         if ("Id" in values.keys()):
-            self.Id = options["Id"]#Id
+            self.Id = options["Id"]  #Id
         else:
             self.Id=None
 
         if ("InventoryLimit" in values.keys()):
-            self.InventoryLimit = options["InventoryLimit"]#Integer
+            self.InventoryLimit = options["InventoryLimit"]  #Integer
         else:
             self.InventoryLimit=None
 
         if ("InventoryNotifiee" in values.keys()):
-            self.InventoryNotifiee = options["InventoryNotifiee"]#String
+            self.InventoryNotifiee = options["InventoryNotifiee"]  #String
         else:
             self.InventoryNotifiee=None
 
         if ("IsPackage" in values.keys()):
-            self.IsPackage = options["IsPackage"]#Integer
+            self.IsPackage = options["IsPackage"]  #Integer
         else:
             self.IsPackage=None
 
         if ("LargeImage" in values.keys()):
-            self.LargeImage = options["LargeImage"]#Blob
+            self.LargeImage = options["LargeImage"]  #Blob
         else:
             self.LargeImage=None
 
         if ("NeedsDigitalDelivery" in values.keys()):
-            self.NeedsDigitalDelivery = options["NeedsDigitalDelivery"]#Integer
+            self.NeedsDigitalDelivery = options["NeedsDigitalDelivery"]  #Integer
         else:
             self.NeedsDigitalDelivery=None
 
         if ("ProductName" in values.keys()):
-            self.ProductName = options["ProductName"]#String
+            self.ProductName = options["ProductName"]  #String
         else:
             self.ProductName=None
 
         if ("ProductPrice" in values.keys()):
-            self.ProductPrice = options["ProductPrice"]#Double
+            self.ProductPrice = options["ProductPrice"]  #Double
         else:
             self.ProductPrice=None
 
         if ("Shippable" in values.keys()):
-            self.Shippable = options["Shippable"]#Integer
+            self.Shippable = options["Shippable"]  #Integer
         else:
             self.Shippable=None
 
         if ("ShippingTime" in values.keys()):
-            self.ShippingTime = options["ShippingTime"]#String
+            self.ShippingTime = options["ShippingTime"]  #String
         else:
             self.ShippingTime=None
 
         if ("ShortDescription" in values.keys()):
-            self.ShortDescription = options["ShortDescription"]#String
+            self.ShortDescription = options["ShortDescription"]  #String
         else:
             self.ShortDescription=None
 
         if ("Sku" in values.keys()):
-            self.Sku = options["Sku"]#String
+            self.Sku = options["Sku"]  #String
         else:
             self.Sku=None
 
         if ("StateTaxable" in values.keys()):
-            self.StateTaxable = options["StateTaxable"]#Integer
+            self.StateTaxable = options["StateTaxable"]  #Integer
         else:
             self.StateTaxable=None
 
         if ("Status" in values.keys()):
-            self.Status = options["Status"]#Integer
+            self.Status = options["Status"]  #Integer
         else:
             self.Status=None
 
         if ("Taxable" in values.keys()):
-            self.Taxable = options["Taxable"]#Integer
+            self.Taxable = options["Taxable"]  #Integer
         else:
             self.Taxable=None
 
         if ("TopHTML" in values.keys()):
-            self.TopHTML = options["TopHTML"]#String
+            self.TopHTML = options["TopHTML"]  #String
         else:
             self.TopHTML=None
 
         if ("Weight" in values.keys()):
-            self.Weight = options["Weight"]#Double
+            self.Weight = options["Weight"]  #Double
         else:
             self.Weight=None
 
